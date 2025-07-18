@@ -30,7 +30,7 @@ All colors MUST be HSL.
     --accent-foreground: 240 100% 1.2%;
 
     /* Custom calendar colors */
-    --calendar-bg: 120 13% 23.5%;
+    --calendar-bg: 0 0% 98%;
     --calendar-card: 0 0% 100%;
     --calendar-mint: 94 76% 84.3%;
     --calendar-maroon: 350 100% 19.8%;
