@@ -8,26 +8,33 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 98%;
+    --foreground: 240 100% 1.2%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 100% 1.2%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 100% 1.2%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 350 100% 19.8%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 94 76% 84.3%;
+    --secondary-foreground: 240 100% 1.2%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 120 13% 23.5%;
+    --muted-foreground: 120 5% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 94 76% 84.3%;
+    --accent-foreground: 240 100% 1.2%;
+
+    /* Custom calendar colors */
+    --calendar-bg: 120 13% 23.5%;
+    --calendar-card: 0 0% 100%;
+    --calendar-mint: 94 76% 84.3%;
+    --calendar-maroon: 350 100% 19.8%;
+    --calendar-text: 240 100% 1.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;

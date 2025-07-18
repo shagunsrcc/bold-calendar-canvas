@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'dancing': ['Dancing Script', 'cursive'],
+				'playfair': ['Playfair Display', 'serif'],
+				'inter': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -51,6 +56,13 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				calendar: {
+					bg: 'hsl(var(--calendar-bg))',
+					card: 'hsl(var(--calendar-card))',
+					mint: 'hsl(var(--calendar-mint))',
+					maroon: 'hsl(var(--calendar-maroon))',
+					text: 'hsl(var(--calendar-text))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
