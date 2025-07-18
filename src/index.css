@@ -17,24 +17,24 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 240 100% 1.2%;
 
-    --primary: 350 100% 19.8%;
+    --primary: 358 100% 20%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 94 76% 84.3%;
-    --secondary-foreground: 240 100% 1.2%;
+    --secondary: 94 89% 84%;
+    --secondary-foreground: 240 20% 1%;
 
-    --muted: 120 13% 23.5%;
-    --muted-foreground: 120 5% 40%;
+    --muted: 120 13% 23%;
+    --muted-foreground: 120 9% 45%;
 
-    --accent: 94 76% 84.3%;
-    --accent-foreground: 240 100% 1.2%;
+    --accent: 94 89% 84%;
+    --accent-foreground: 240 20% 1%;
 
     /* Custom calendar colors */
     --calendar-bg: 0 0% 98%;
     --calendar-card: 0 0% 100%;
-    --calendar-mint: 94 76% 84.3%;
-    --calendar-maroon: 350 100% 19.8%;
-    --calendar-text: 240 100% 1.2%;
+    --calendar-mint: 94 89% 84%;
+    --calendar-maroon: 358 100% 20%;
+    --calendar-text: 240 20% 1%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
