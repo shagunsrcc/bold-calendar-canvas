@@ -36,6 +36,13 @@ All colors MUST be HSL.
     --calendar-maroon: 358 100% 20%;
     --calendar-text: 240 20% 1%;
 
+    /* Extended color palette */
+    --dark-red: 4 76% 32%;
+    --night: 150 100% 3%;
+    --verdigris: 185 35% 63%;
+    --cinereous: 23 11% 54%;
+    --saffron: 48 94% 46%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
