@@ -36,26 +36,12 @@ All colors MUST be HSL.
     --calendar-maroon: 358 100% 20%;
     --calendar-text: 240 20% 1%;
 
-    /* Extended color palette from user image */
-    --color-1: 150 13% 25%;  /* Dark slate gray - 36453B */
-    --color-2: 358 100% 20%; /* Blood red - 650200 */
-    --color-3: 94 89% 84%;   /* Tea green - D0FCB3 */
-    --color-4: 240 20% 1%;   /* Black - 020203 */
-    --color-5: 264 6% 24%;   /* Jet - 3D3B40 */
-
-    /* Enhanced gradients for visual appeal */
-    --gradient-1: linear-gradient(135deg, hsl(150 13% 25%) 0%, hsl(150 15% 35%) 100%);
-    --gradient-2: linear-gradient(135deg, hsl(358 100% 20%) 0%, hsl(358 100% 30%) 100%);
-    --gradient-3: linear-gradient(135deg, hsl(94 89% 84%) 0%, hsl(94 89% 90%) 100%);
-    --gradient-4: linear-gradient(135deg, hsl(240 20% 1%) 0%, hsl(240 15% 15%) 100%);
-    --gradient-5: linear-gradient(135deg, hsl(264 6% 24%) 0%, hsl(264 8% 35%) 100%);
-
-    /* Glow effects */
-    --glow-1: 0 0 40px hsl(150 13% 25% / 0.3);
-    --glow-2: 0 0 40px hsl(358 100% 20% / 0.3);
-    --glow-3: 0 0 40px hsl(94 89% 84% / 0.5);
-    --glow-4: 0 0 40px hsl(240 20% 1% / 0.3);
-    --glow-5: 0 0 40px hsl(264 6% 24% / 0.3);
+    /* Extended color palette */
+    --dark-red: 4 76% 32%;
+    --night: 150 100% 3%;
+    --verdigris: 185 35% 63%;
+    --cinereous: 23 11% 54%;
+    --saffron: 48 94% 46%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;

@@ -292,28 +292,22 @@ const competitionData: Month[] = [
 
 const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }) => {
   return (
-    <div className="group relative bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 overflow-hidden">
-      {/* Card glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      
-      {/* Floating decoration */}
-      <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-calendar-mint/20 to-calendar-maroon/20 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500"></div>
-      
-      <div className="flex flex-col h-full relative z-10">
+    <div className="group bg-calendar-card rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100/50">
+      <div className="flex flex-col h-full">
         <div className="flex-grow">
-          <h3 className="font-inter font-black text-xl text-calendar-text mb-3 leading-tight group-hover:text-calendar-maroon transition-colors duration-300">
+          <h3 className="font-inter font-bold text-lg text-calendar-text mb-2 leading-tight">
             {competition.name}
           </h3>
           
-          <p className="text-muted-foreground text-sm mb-4 font-inter font-semibold">
+          <p className="text-muted-foreground text-sm mb-3 font-inter">
             {competition.organizer}
           </p>
           
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-2 mb-4">
             {competition.tags.map((tag, index) => (
               <Badge 
                 key={index} 
-                className="bg-gradient-to-r from-calendar-mint to-calendar-mint/80 text-calendar-text border-0 font-inter text-xs px-4 py-2 rounded-full hover:from-calendar-maroon hover:to-calendar-maroon/80 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                className="bg-calendar-mint text-calendar-text border-0 font-inter text-xs px-3 py-1 rounded-full hover:bg-calendar-mint/80 transition-colors"
               >
                 {tag}
               </Badge>
@@ -330,94 +324,51 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
         <Button 
           variant="calendar"
           size="sm"
-          className="w-full bg-gradient-to-r from-calendar-maroon to-calendar-maroon/90 hover:from-calendar-maroon/90 hover:to-calendar-maroon text-white group-hover:shadow-xl group-hover:shadow-calendar-maroon/30 transition-all duration-500 rounded-full font-bold py-3 transform hover:scale-105"
+          className="w-full group-hover:shadow-md transition-all duration-300 rounded-full"
           onClick={() => window.open(competition.registerLink, '_blank')}
         >
-          Register Now
-          <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+          Register
+          <ExternalLink className="ml-2 h-4 w-4" />
         </Button>
       </div>
     </div>
   );
 };
 
-const MonthSection: React.FC<{ month: Month; monthIndex: number }> = ({ month, monthIndex }) => {
-  const gradientClasses = [
-    'bg-gradient-to-br from-color-1 via-color-1/90 to-color-1/80', // January
-    'bg-gradient-to-br from-color-2 via-color-2/90 to-color-2/80', // February  
-    'bg-gradient-to-br from-color-3 via-color-3/90 to-color-3/80', // March
-    'bg-gradient-to-br from-color-4 via-color-4/90 to-color-4/80', // April
-    'bg-gradient-to-br from-color-5 via-color-5/90 to-color-5/80', // May
-  ];
-  
-  const glowClasses = [
-    'shadow-[0_0_50px_rgba(64,123,91,0.4)]', // Dark slate gray glow
-    'shadow-[0_0_50px_rgba(101,2,0,0.4)]',   // Blood red glow
-    'shadow-[0_0_50px_rgba(208,252,179,0.6)]', // Tea green glow
-    'shadow-[0_0_50px_rgba(2,2,3,0.4)]',     // Black glow
-    'shadow-[0_0_50px_rgba(61,59,64,0.4)]',  // Jet glow
-  ];
-  
-  const backgroundClass = gradientClasses[monthIndex % 5];
-  const glowClass = glowClasses[monthIndex % 5];
-  const textClass = (monthIndex % 5 === 2) ? 'text-black' : 'text-white';
-
+const MonthSection: React.FC<{ month: Month }> = ({ month }) => {
   return (
-    <section className={`${backgroundClass} ${glowClass} w-full py-20 relative overflow-hidden`}>
-      {/* Decorative background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full border-2 border-current animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full border border-current animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 rotate-45 border border-current animate-pulse delay-500"></div>
-        <div className="absolute top-1/4 right-1/3 w-20 h-20 rotate-12 border border-current animate-pulse delay-700"></div>
-      </div>
+    <div className="mb-16">
+      <h2 className="font-inter text-5xl md:text-6xl font-bold text-calendar-text mb-8 text-center md:text-left">
+        {month.name}
+      </h2>
       
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className={`font-inter text-6xl md:text-8xl font-black ${textClass} mb-4 tracking-wider transform transition-all duration-500 hover:scale-105`}>
-            {month.name}
-          </h2>
-          <div className={`w-24 h-1 ${textClass === 'text-white' ? 'bg-white/30' : 'bg-black/30'} mx-auto rounded-full`}></div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {month.competitions.map((competition, index) => (
-            <CompetitionCard key={index} competition={competition} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {month.competitions.map((competition, index) => (
+          <CompetitionCard key={index} competition={competition} />
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
 const CompetitionCalendar: React.FC = () => {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-calendar-bg via-white to-calendar-mint/20 py-24 px-4 md:px-8 relative overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-64 h-64 rounded-full bg-calendar-maroon/20 animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-calendar-mint/30 animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-gradient-to-r from-calendar-maroon/10 to-calendar-mint/10 animate-pulse delay-500"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="font-inter text-6xl md:text-8xl font-black text-calendar-text mb-6 tracking-wider">
-            Competition
-            <span className="block text-calendar-maroon drop-shadow-lg">Calendar</span>
+    <section className="min-h-screen bg-calendar-bg py-16 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="font-inter text-5xl md:text-6xl font-bold text-calendar-text mb-4">
+            Competition Calendar
           </h1>
-          <div className="w-32 h-1 bg-gradient-to-r from-calendar-maroon to-calendar-mint mx-auto rounded-full mb-8"></div>
-          <p className="font-inter text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="font-inter text-xl text-muted-foreground max-w-2xl mx-auto">
             Discover and register for the most prestigious B-school competitions and challenges
           </p>
         </div>
+        
+        {competitionData.map((month, index) => (
+          <MonthSection key={index} month={month} />
+        ))}
       </div>
-      
-      {competitionData.map((month, index) => (
-        <MonthSection key={index} month={month} monthIndex={index} />
-      ))}
-    </div>
+    </section>
   );
 };
 
