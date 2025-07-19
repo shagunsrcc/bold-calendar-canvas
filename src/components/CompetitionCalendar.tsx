@@ -348,38 +348,40 @@ const MonthSection: React.FC<{ month: Month; monthIndex: number }> = ({ month, m
   const textClass = (monthIndex % 5 === 1 || monthIndex % 5 === 3) ? 'text-white' : 'text-black';
 
   return (
-    <div className={`${backgroundClass} p-8 rounded-2xl mb-16 transition-all duration-300`}>
-      <h2 className={`font-inter text-5xl md:text-6xl font-bold ${textClass} mb-8 text-center md:text-left`}>
-        {month.name}
-      </h2>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {month.competitions.map((competition, index) => (
-          <CompetitionCard key={index} competition={competition} />
-        ))}
+    <section className={`${backgroundClass} w-full py-16 transition-all duration-300`}>
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <h2 className={`font-inter text-5xl md:text-6xl font-bold ${textClass} mb-8 text-center md:text-left`}>
+          {month.name}
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {month.competitions.map((competition, index) => (
+            <CompetitionCard key={index} competition={competition} />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 const CompetitionCalendar: React.FC = () => {
   return (
-    <section className="min-h-screen bg-calendar-bg py-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+    <div className="min-h-screen">
+      <div className="bg-calendar-bg py-16 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto text-center">
           <h1 className="font-inter text-5xl md:text-6xl font-bold text-calendar-text mb-4">
             Competition Calendar
           </h1>
-          <p className="font-inter text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-inter text-xl text-muted-foreground max-w-2xl mx-auto mb-16">
             Discover and register for the most prestigious B-school competitions and challenges
           </p>
         </div>
-        
-        {competitionData.map((month, index) => (
-          <MonthSection key={index} month={month} monthIndex={index} />
-        ))}
       </div>
-    </section>
+      
+      {competitionData.map((month, index) => (
+        <MonthSection key={index} month={month} monthIndex={index} />
+      ))}
+    </div>
   );
 };
 
