@@ -36,12 +36,12 @@ All colors MUST be HSL.
     --calendar-maroon: 358 100% 20%;
     --calendar-text: 240 20% 1%;
 
-    /* Extended color palette */
-    --dark-red: 4 76% 32%;
-    --night: 150 100% 3%;
-    --verdigris: 185 35% 63%;
-    --cinereous: 23 11% 54%;
-    --saffron: 48 94% 46%;
+    /* Extended color palette from user image */
+    --color-1: 150 13% 25%;  /* Dark slate gray - 36453B */
+    --color-2: 358 100% 20%; /* Blood red - 650200 */
+    --color-3: 94 89% 84%;   /* Tea green - D0FCB3 */
+    --color-4: 240 20% 1%;   /* Black - 020203 */
+    --color-5: 264 6% 24%;   /* Jet - 3D3B40 */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;

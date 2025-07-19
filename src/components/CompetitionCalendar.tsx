@@ -335,10 +335,21 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
   );
 };
 
-const MonthSection: React.FC<{ month: Month }> = ({ month }) => {
+const MonthSection: React.FC<{ month: Month; monthIndex: number }> = ({ month, monthIndex }) => {
+  const colorClasses = [
+    'bg-color-1', // January - Dark slate gray
+    'bg-color-2', // February - Blood red  
+    'bg-color-3', // March - Tea green
+    'bg-color-4', // April - Black
+    'bg-color-5', // May - Jet
+  ];
+  
+  const backgroundClass = colorClasses[monthIndex % 5];
+  const textClass = (monthIndex % 5 === 1 || monthIndex % 5 === 3) ? 'text-white' : 'text-black';
+
   return (
-    <div className="mb-16">
-      <h2 className="font-inter text-5xl md:text-6xl font-bold text-calendar-text mb-8 text-center md:text-left">
+    <div className={`${backgroundClass} p-8 rounded-2xl mb-16 transition-all duration-300`}>
+      <h2 className={`font-inter text-5xl md:text-6xl font-bold ${textClass} mb-8 text-center md:text-left`}>
         {month.name}
       </h2>
       
@@ -365,7 +376,7 @@ const CompetitionCalendar: React.FC = () => {
         </div>
         
         {competitionData.map((month, index) => (
-          <MonthSection key={index} month={month} />
+          <MonthSection key={index} month={month} monthIndex={index} />
         ))}
       </div>
     </section>
