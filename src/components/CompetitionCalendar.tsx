@@ -345,7 +345,7 @@ const MonthSection: React.FC<{ month: Month; monthIndex: number }> = ({ month, m
   ];
   
   const backgroundClass = colorClasses[monthIndex % 5];
-  const textClass = (monthIndex % 5 === 1 || monthIndex % 5 === 3) ? 'text-white' : 'text-black';
+  const textClass = (monthIndex % 5 === 2) ? 'text-black' : 'text-white'; // Only tea green (color-3) gets dark text
 
   return (
     <section className={`${backgroundClass} w-full py-16 transition-all duration-300`}>
