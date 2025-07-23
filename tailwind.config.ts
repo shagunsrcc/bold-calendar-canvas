@@ -64,6 +64,15 @@ export default {
 					maroon: 'hsl(var(--calendar-maroon))',
 					text: 'hsl(var(--calendar-text))'
 				},
+				premium: {
+					dark: 'hsl(var(--premium-dark))',
+					darker: 'hsl(var(--premium-darker))',
+					card: 'hsl(var(--premium-card))',
+					text: 'hsl(var(--premium-text))',
+					muted: 'hsl(var(--premium-muted))',
+					accent: 'hsl(var(--premium-accent))',
+					glow: 'hsl(var(--premium-glow))'
+				},
 				'color-1': 'hsl(var(--color-1))',
 				'color-2': 'hsl(var(--color-2))',
 				'color-3': 'hsl(var(--color-3))',
@@ -84,6 +93,17 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-dark': 'var(--gradient-dark)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-premium': 'var(--gradient-premium)',
+				'gradient-accent': 'var(--gradient-accent)'
+			},
+			boxShadow: {
+				'3d': 'var(--shadow-3d)',
+				'card': 'var(--shadow-card)', 
+				'hover': 'var(--shadow-hover)'
 			},
 			keyframes: {
 				'accordion-down': {

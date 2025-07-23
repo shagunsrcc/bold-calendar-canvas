@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { ExternalLink, Search, Filter } from 'lucide-react';
 
 interface Competition {
   name: string;
@@ -292,28 +293,37 @@ const competitionData: Month[] = [
 
 const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }) => {
   return (
-    <div className="group relative bg-white/95 backdrop-blur-sm rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 overflow-hidden">
-      {/* Card glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div className="group relative bg-gradient-card rounded-3xl p-8 transition-all duration-700 hover:-translate-y-3 border border-premium-accent/10 overflow-hidden transform-gpu perspective-1000"
+         style={{ 
+           boxShadow: 'var(--shadow-card)',
+           background: 'var(--gradient-card)'
+         }}>
       
-      {/* Floating decoration */}
-      <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-calendar-mint/20 to-calendar-maroon/20 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500"></div>
+      {/* 3D depth layers */}
+      <div className="absolute inset-0 bg-gradient-to-br from-premium-accent/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-premium-darker/20 to-transparent rounded-3xl"></div>
+      
+      {/* Premium glow effect */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-premium-accent/20 via-transparent to-premium-accent/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-sm"></div>
+      
+      {/* Floating decoration with 3D effect */}
+      <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-premium-accent/30 to-premium-glow/20 rounded-full blur-xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-700"></div>
       
       <div className="flex flex-col h-full relative z-10">
         <div className="flex-grow">
-          <h3 className="font-inter font-black text-xl text-calendar-text mb-3 leading-tight group-hover:text-calendar-maroon transition-colors duration-300">
+          <h3 className="font-inter font-black text-2xl text-premium-text mb-4 leading-tight group-hover:text-premium-accent transition-colors duration-500 drop-shadow-sm">
             {competition.name}
           </h3>
           
-          <p className="text-muted-foreground text-sm mb-4 font-inter font-semibold">
+          <p className="text-premium-muted text-sm mb-6 font-inter font-semibold tracking-wide">
             {competition.organizer}
           </p>
           
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-3 mb-8">
             {competition.tags.map((tag, index) => (
               <Badge 
                 key={index} 
-                className="bg-gradient-to-r from-calendar-mint to-calendar-mint/80 text-calendar-text border-0 font-inter text-xs px-4 py-2 rounded-full hover:from-calendar-maroon hover:to-calendar-maroon/80 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                className="bg-gradient-to-r from-premium-accent/20 to-premium-accent/10 text-premium-accent border border-premium-accent/20 font-inter text-xs px-4 py-2 rounded-full hover:from-premium-accent hover:to-premium-accent/90 hover:text-premium-darker hover:border-premium-accent transition-all duration-500 shadow-lg hover:shadow-xl transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm"
               >
                 {tag}
               </Badge>
@@ -321,68 +331,55 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
           </div>
           
           {competition.deadline && (
-            <p className="text-muted-foreground text-xs mb-4 font-inter">
+            <p className="text-premium-muted text-xs mb-6 font-inter font-medium opacity-75">
               Deadline: {competition.deadline}
             </p>
           )}
         </div>
         
         <Button 
-          variant="calendar"
-          size="sm"
-          className="w-full bg-gradient-to-r from-calendar-maroon to-calendar-maroon/90 hover:from-calendar-maroon/90 hover:to-calendar-maroon text-white group-hover:shadow-xl group-hover:shadow-calendar-maroon/30 transition-all duration-500 rounded-full font-bold py-3 transform hover:scale-105"
+          className="w-full bg-gradient-to-r from-premium-accent to-premium-accent/90 hover:from-premium-accent/90 hover:to-premium-accent text-premium-darker font-bold py-4 px-6 rounded-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-2xl border border-premium-accent/20 backdrop-blur-sm group-hover:shadow-premium-accent/30"
           onClick={() => window.open(competition.registerLink, '_blank')}
         >
-          Register Now
-          <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+          <span className="flex items-center justify-center gap-3">
+            Register Now
+            <ExternalLink className="h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-500" />
+          </span>
         </Button>
       </div>
     </div>
   );
 };
 
-const MonthSection: React.FC<{ month: Month; monthIndex: number }> = ({ month, monthIndex }) => {
-  const gradientClasses = [
-    'bg-gradient-to-br from-color-1 via-color-1/90 to-color-1/80', // January
-    'bg-gradient-to-br from-color-2 via-color-2/90 to-color-2/80', // February  
-    'bg-gradient-to-br from-color-3 via-color-3/90 to-color-3/80', // March
-    'bg-gradient-to-br from-color-4 via-color-4/90 to-color-4/80', // April
-    'bg-gradient-to-br from-color-5 via-color-5/90 to-color-5/80', // May
-  ];
-  
-  const glowClasses = [
-    'shadow-[0_0_50px_rgba(64,123,91,0.4)]', // Dark slate gray glow
-    'shadow-[0_0_50px_rgba(101,2,0,0.4)]',   // Blood red glow
-    'shadow-[0_0_50px_rgba(208,252,179,0.6)]', // Tea green glow
-    'shadow-[0_0_50px_rgba(2,2,3,0.4)]',     // Black glow
-    'shadow-[0_0_50px_rgba(61,59,64,0.4)]',  // Jet glow
-  ];
-  
-  const backgroundClass = gradientClasses[monthIndex % 5];
-  const glowClass = glowClasses[monthIndex % 5];
-  const textClass = (monthIndex % 5 === 2) ? 'text-black' : 'text-white';
+const MonthSection: React.FC<{ month: Month; monthIndex: number; competitions: Competition[] }> = ({ month, monthIndex, competitions }) => {
+  if (competitions.length === 0) return null;
 
   return (
-    <section className={`${backgroundClass} ${glowClass} w-full py-20 relative overflow-hidden`}>
-      {/* Decorative background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full border-2 border-current animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full border border-current animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 rotate-45 border border-current animate-pulse delay-500"></div>
-        <div className="absolute top-1/4 right-1/3 w-20 h-20 rotate-12 border border-current animate-pulse delay-700"></div>
+    <section className="w-full py-24 relative overflow-hidden bg-gradient-to-br from-premium-dark via-premium-darker to-premium-dark">
+      {/* Premium 3D background effects */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-20 w-64 h-64 rounded-full border-2 border-premium-accent/30 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full border border-premium-accent/20 animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 rotate-45 border border-premium-accent/15 animate-pulse delay-500"></div>
+        <div className="absolute top-1/4 right-1/3 w-40 h-40 rotate-12 border border-premium-accent/25 animate-pulse delay-700"></div>
       </div>
       
+      {/* Gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-t from-premium-darker/20 via-transparent to-premium-darker/20"></div>
+      
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className={`font-inter text-6xl md:text-8xl font-black ${textClass} mb-4 tracking-wider transform transition-all duration-500 hover:scale-105`}>
+        <div className="text-center mb-16">
+          <h2 className="font-inter text-7xl md:text-9xl font-black text-premium-text mb-6 tracking-wider transform transition-all duration-700 hover:scale-105 drop-shadow-2xl">
             {month.name}
           </h2>
-          <div className={`w-24 h-1 ${textClass === 'text-white' ? 'bg-white/30' : 'bg-black/30'} mx-auto rounded-full`}></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-transparent via-premium-accent to-transparent mx-auto rounded-full opacity-60"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {month.competitions.map((competition, index) => (
-            <CompetitionCard key={index} competition={competition} />
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+          {competitions.map((competition, index) => (
+            <div key={index} className="transform hover:scale-105 transition-transform duration-500">
+              <CompetitionCard competition={competition} />
+            </div>
           ))}
         </div>
       </div>
@@ -391,32 +388,140 @@ const MonthSection: React.FC<{ month: Month; monthIndex: number }> = ({ month, m
 };
 
 const CompetitionCalendar: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedTag, setSelectedTag] = useState('');
+
+  // Get all unique tags for filtering
+  const allTags = useMemo(() => {
+    const tags = new Set<string>();
+    competitionData.forEach(month => 
+      month.competitions.forEach(comp => 
+        comp.tags.forEach(tag => tags.add(tag))
+      )
+    );
+    return Array.from(tags).sort();
+  }, []);
+
+  // Filter competitions based on search and tag
+  const filteredMonths = useMemo(() => {
+    return competitionData.map(month => ({
+      ...month,
+      competitions: month.competitions.filter(competition => {
+        const matchesSearch = competition.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                             competition.organizer.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                             competition.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+        
+        const matchesTag = !selectedTag || competition.tags.includes(selectedTag);
+        
+        return matchesSearch && matchesTag;
+      })
+    })).filter(month => month.competitions.length > 0);
+  }, [searchTerm, selectedTag]);
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-calendar-bg via-white to-calendar-mint/20 py-24 px-4 md:px-8 relative overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-64 h-64 rounded-full bg-calendar-maroon/20 animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full bg-calendar-mint/30 animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-gradient-to-r from-calendar-maroon/10 to-calendar-mint/10 animate-pulse delay-500"></div>
+    <div className="min-h-screen bg-gradient-dark">
+      {/* Premium Hero Section */}
+      <div className="relative overflow-hidden py-32 px-4 md:px-8" 
+           style={{ background: 'var(--gradient-dark)' }}>
+        
+        {/* Premium animated background with 3D depth */}
+        <div className="absolute inset-0 opacity-3">
+          <div className="absolute top-32 left-32 w-96 h-96 rounded-full bg-premium-accent/10 animate-pulse blur-3xl"></div>
+          <div className="absolute bottom-32 right-32 w-80 h-80 rounded-full bg-premium-glow/15 animate-pulse delay-1000 blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-r from-premium-accent/5 to-premium-glow/5 animate-pulse delay-500 blur-3xl"></div>
+        </div>
+        
+        {/* Floating elements for depth */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-4 h-4 bg-premium-accent rounded-full animate-pulse"></div>
+          <div className="absolute top-40 right-32 w-2 h-2 bg-premium-glow rounded-full animate-pulse delay-300"></div>
+          <div className="absolute bottom-40 left-1/4 w-3 h-3 bg-premium-accent rounded-full animate-pulse delay-700"></div>
+          <div className="absolute bottom-20 right-20 w-6 h-6 bg-premium-glow rounded-full animate-pulse delay-1000"></div>
         </div>
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="font-inter text-6xl md:text-8xl font-black text-calendar-text mb-6 tracking-wider">
+          <h1 className="font-inter text-7xl md:text-9xl font-black text-premium-text mb-8 tracking-wider leading-tight drop-shadow-2xl">
             Competition
-            <span className="block text-calendar-maroon drop-shadow-lg">Calendar</span>
+            <span className="block bg-gradient-to-r from-premium-accent to-premium-glow bg-clip-text text-transparent drop-shadow-none">
+              Calendar
+            </span>
           </h1>
-          <div className="w-32 h-1 bg-gradient-to-r from-calendar-maroon to-calendar-mint mx-auto rounded-full mb-8"></div>
-          <p className="font-inter text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover and register for the most prestigious B-school competitions and challenges
+          
+          <div className="w-40 h-1 bg-gradient-to-r from-transparent via-premium-accent to-transparent mx-auto rounded-full mb-12 opacity-80"></div>
+          
+          <p className="font-inter text-xl md:text-2xl text-premium-muted max-w-4xl mx-auto leading-relaxed mb-16 opacity-90">
+            Discover and register for the most prestigious B-school competitions and challenges with our premium search experience
           </p>
+
+          {/* Premium Search Section */}
+          <div className="max-w-4xl mx-auto mb-8">
+            <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
+              {/* Search Input */}
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-premium-muted h-5 w-5" />
+                <Input
+                  type="text"
+                  placeholder="Search competitions, organizers, or tags..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-12 pr-6 py-4 bg-premium-card/80 border border-premium-accent/20 rounded-2xl text-premium-text placeholder-premium-muted/60 focus:border-premium-accent focus:ring-2 focus:ring-premium-accent/20 backdrop-blur-sm shadow-lg transition-all duration-300"
+                />
+              </div>
+
+              {/* Tag Filter */}
+              <div className="relative">
+                <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-premium-muted h-5 w-5" />
+                <select
+                  value={selectedTag}
+                  onChange={(e) => setSelectedTag(e.target.value)}
+                  className="pl-12 pr-8 py-4 bg-premium-card/80 border border-premium-accent/20 rounded-2xl text-premium-text focus:border-premium-accent focus:ring-2 focus:ring-premium-accent/20 backdrop-blur-sm shadow-lg transition-all duration-300 appearance-none cursor-pointer"
+                >
+                  <option value="">All Categories</option>
+                  {allTags.map(tag => (
+                    <option key={tag} value={tag} className="bg-premium-card text-premium-text">
+                      {tag}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Search Results Summary */}
+            {(searchTerm || selectedTag) && (
+              <p className="text-premium-muted text-sm mt-4 opacity-75">
+                Found {filteredMonths.reduce((total, month) => total + month.competitions.length, 0)} competitions
+                {searchTerm && ` matching "${searchTerm}"`}
+                {selectedTag && ` in ${selectedTag}`}
+              </p>
+            )}
+          </div>
         </div>
       </div>
       
-      {competitionData.map((month, index) => (
-        <MonthSection key={index} month={month} monthIndex={index} />
+      {/* Competition Sections */}
+      {filteredMonths.map((month, index) => (
+        <MonthSection 
+          key={index} 
+          month={month} 
+          monthIndex={index} 
+          competitions={month.competitions}
+        />
       ))}
+
+      {filteredMonths.length === 0 && (searchTerm || selectedTag) && (
+        <div className="py-24 text-center">
+          <p className="text-premium-muted text-xl">No competitions found matching your criteria.</p>
+          <Button 
+            onClick={() => {
+              setSearchTerm('');
+              setSelectedTag('');
+            }}
+            className="mt-6 bg-premium-accent text-premium-darker hover:bg-premium-accent/90 transition-colors duration-300"
+          >
+            Clear Filters
+          </Button>
+        </div>
+      )}
     </div>
   );
 };
