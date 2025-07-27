@@ -440,14 +440,17 @@ const CompetitionCalendar: React.FC = () => {
         </div>
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="font-inter text-6xl md:text-7xl font-extrabold text-white mb-8 tracking-wide leading-tight" style={{ textShadow: '2px 2px 4px rgba(31, 41, 55, 0.8)' }}>
-            Corporate Case Competition Calendar
+          <h1 className="font-inter text-7xl md:text-9xl font-black text-premium-text mb-8 tracking-wider leading-tight drop-shadow-2xl">
+            Competition
+            <span className="block bg-gradient-to-r from-premium-accent to-premium-glow bg-clip-text text-transparent drop-shadow-none">
+              Calendar
+            </span>
           </h1>
           
-          <div className="w-40 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto rounded-full mb-12 opacity-80"></div>
+          <div className="w-40 h-1 bg-gradient-to-r from-transparent via-premium-accent to-transparent mx-auto rounded-full mb-12 opacity-80"></div>
           
-          <p className="font-inter text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed mb-16 font-bold" style={{ textShadow: '1px 1px 2px rgba(31, 41, 55, 0.6)' }}>
-            Discover and register for the most prestigious undergraduate and B-school competitions and challenges
+          <p className="font-inter text-xl md:text-2xl text-premium-muted max-w-4xl mx-auto leading-relaxed mb-16 opacity-90">
+            Discover and register for the most prestigious B-school competitions and challenges with our premium search experience
           </p>
 
           {/* Premium Search Section */}

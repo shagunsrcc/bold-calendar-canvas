@@ -29,19 +29,14 @@ All colors MUST be HSL.
     --accent: 94 89% 84%;
     --accent-foreground: 240 20% 1%;
 
-    /* Red gradient theme colors */
-    --vivid-red: 0 78% 59%;
-    --soft-red: 0 70% 71%;
-    --red-gradient: linear-gradient(90deg, hsl(var(--vivid-red)), hsl(var(--soft-red)));
-    
     /* Premium 3D design system */
     --premium-dark: 222 15% 8%;
     --premium-darker: 222 20% 4%;
     --premium-card: 222 15% 12%;
-    --premium-text: 0 0% 100%;
-    --premium-muted: 215 20% 75%;
-    --premium-accent: 0 78% 59%;
-    --premium-glow: 0 70% 71%;
+    --premium-text: 0 0% 95%;
+    --premium-muted: 215 20% 65%;
+    --premium-accent: 94 89% 84%;
+    --premium-glow: 94 89% 84%;
     
     /* Custom calendar colors */
     --calendar-bg: 222 15% 8%;
@@ -58,10 +53,10 @@ All colors MUST be HSL.
     --color-5: 264 6% 24%;   /* Jet - 3D3B40 */
 
     /* Premium 3D gradients */
-    --gradient-dark: var(--red-gradient);
+    --gradient-dark: linear-gradient(135deg, hsl(222 15% 8%) 0%, hsl(222 20% 4%) 50%, hsl(222 15% 8%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(222 15% 14%) 0%, hsl(222 15% 10%) 100%);
-    --gradient-premium: var(--red-gradient);
-    --gradient-accent: var(--red-gradient);
+    --gradient-premium: linear-gradient(135deg, hsl(94 89% 84%) 0%, hsl(142 76% 73%) 50%, hsl(94 89% 84%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(358 100% 20%) 0%, hsl(358 100% 35%) 100%);
     
     /* Enhanced gradients for visual appeal */
     --gradient-1: linear-gradient(145deg, hsl(222 15% 14%) 0%, hsl(222 15% 10%) 100%);
@@ -81,6 +76,16 @@ All colors MUST be HSL.
     --glow-3: 0 0 60px hsl(94 89% 84% / 0.6);
     --glow-4: 0 0 40px hsl(222 20% 4% / 0.6);
     --glow-5: 0 0 40px hsl(264 6% 24% / 0.4);
+
+    /* 3D Geometric Patterns */
+    --pattern-dots: radial-gradient(circle at 2px 2px, hsl(94 89% 84% / 0.15) 1px, transparent 0);
+    --pattern-grid: linear-gradient(hsl(94 89% 84% / 0.1) 1px, transparent 1px), linear-gradient(90deg, hsl(94 89% 84% / 0.1) 1px, transparent 1px);
+    --pattern-hexagon: radial-gradient(circle at 50% 50%, hsl(358 100% 20% / 0.1) 2px, transparent 2px);
+    --pattern-diamond: conic-gradient(from 45deg, hsl(94 89% 84% / 0.1), transparent, hsl(94 89% 84% / 0.1));
+    
+    /* Geometric transforms */
+    --transform-float: translateY(-4px) rotateX(2deg) rotateY(1deg);
+    --transform-hover: translateY(-8px) rotateX(4deg) rotateY(2deg) scale(1.02);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -153,6 +158,133 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground relative overflow-x-hidden;
+    background-image: var(--pattern-dots), var(--pattern-grid);
+    background-size: 20px 20px, 40px 40px;
+    background-position: 0 0, 0 0;
   }
+
+  /* Floating geometric shapes */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: 
+      radial-gradient(circle at 20% 80%, hsl(358 100% 20% / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(94 89% 84% / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(222 15% 12% / 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  /* Animated floating elements */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 15% 25%, hsl(94 89% 84% / 0.02) 1px, transparent 1px),
+      radial-gradient(circle at 85% 75%, hsl(358 100% 20% / 0.02) 2px, transparent 2px);
+    background-size: 60px 60px, 80px 80px;
+    animation: float-pattern 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+@keyframes float-pattern {
+  0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+  50% { transform: translateY(-10px) rotateZ(2deg); }
+}
+
+/* 3D Geometric utility classes */
+@layer utilities {
+  .geometric-shape {
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  
+  .geometric-shape::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+      hsl(94 89% 84% / 0.1), 
+      hsl(358 100% 20% / 0.1), 
+      hsl(94 89% 84% / 0.1)
+    );
+    border-radius: inherit;
+    z-index: -1;
+    animation: geometric-glow 3s ease-in-out infinite;
+  }
+  
+  .floating-3d {
+    animation: float-3d 6s ease-in-out infinite;
+    transform-style: preserve-3d;
+  }
+  
+  .hover-3d {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  
+  .hover-3d:hover {
+    transform: var(--transform-hover);
+    box-shadow: var(--shadow-hover), var(--glow-3);
+  }
+  
+  .pattern-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .pattern-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--pattern-hexagon);
+    background-size: 30px 30px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .diamond-pattern {
+    background-image: 
+      linear-gradient(45deg, hsl(94 89% 84% / 0.05) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(94 89% 84% / 0.05) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, hsl(358 100% 20% / 0.05) 75%),
+      linear-gradient(-45deg, transparent 75%, hsl(358 100% 20% / 0.05) 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  }
+}
+
+@keyframes float-3d {
+  0%, 100% { 
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg); 
+  }
+  33% { 
+    transform: translateY(-8px) rotateX(2deg) rotateY(1deg); 
+  }
+  66% { 
+    transform: translateY(-4px) rotateX(-1deg) rotateY(-0.5deg); 
+  }
+}
+
+@keyframes geometric-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.02); }
 }
