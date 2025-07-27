@@ -450,7 +450,7 @@ const CompetitionCalendar: React.FC = () => {
           <div className="w-40 h-1 bg-gradient-to-r from-transparent via-premium-accent to-transparent mx-auto rounded-full mb-12 opacity-80"></div>
           
           <p className="font-inter text-xl md:text-2xl text-premium-muted max-w-4xl mx-auto leading-relaxed mb-16 opacity-90">
-            Discover and register for the most prestigious B-school competitions and challenges with our premium search experience
+            Discover and register for the most prestigious undergraduate and B-school competitions and challenges with our premium search experience
           </p>
 
           {/* Premium Search Section */}
