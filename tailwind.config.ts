@@ -73,6 +73,10 @@ export default {
 					accent: 'hsl(var(--premium-accent))',
 					glow: 'hsl(var(--premium-glow))'
 				},
+				red: {
+					vivid: 'hsl(var(--vivid-red))',
+					soft: 'hsl(var(--soft-red))',
+				},
 				'color-1': 'hsl(var(--color-1))',
 				'color-2': 'hsl(var(--color-2))',
 				'color-3': 'hsl(var(--color-3))',

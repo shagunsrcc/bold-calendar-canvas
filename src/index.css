@@ -29,14 +29,19 @@ All colors MUST be HSL.
     --accent: 94 89% 84%;
     --accent-foreground: 240 20% 1%;
 
+    /* Red gradient theme colors */
+    --vivid-red: 0 78% 59%;
+    --soft-red: 0 70% 71%;
+    --red-gradient: linear-gradient(90deg, hsl(var(--vivid-red)), hsl(var(--soft-red)));
+    
     /* Premium 3D design system */
     --premium-dark: 222 15% 8%;
     --premium-darker: 222 20% 4%;
     --premium-card: 222 15% 12%;
-    --premium-text: 0 0% 95%;
-    --premium-muted: 215 20% 65%;
-    --premium-accent: 94 89% 84%;
-    --premium-glow: 94 89% 84%;
+    --premium-text: 0 0% 100%;
+    --premium-muted: 215 20% 75%;
+    --premium-accent: 0 78% 59%;
+    --premium-glow: 0 70% 71%;
     
     /* Custom calendar colors */
     --calendar-bg: 222 15% 8%;
@@ -53,10 +58,10 @@ All colors MUST be HSL.
     --color-5: 264 6% 24%;   /* Jet - 3D3B40 */
 
     /* Premium 3D gradients */
-    --gradient-dark: linear-gradient(135deg, hsl(222 15% 8%) 0%, hsl(222 20% 4%) 50%, hsl(222 15% 8%) 100%);
+    --gradient-dark: var(--red-gradient);
     --gradient-card: linear-gradient(145deg, hsl(222 15% 14%) 0%, hsl(222 15% 10%) 100%);
-    --gradient-premium: linear-gradient(135deg, hsl(94 89% 84%) 0%, hsl(142 76% 73%) 50%, hsl(94 89% 84%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(358 100% 20%) 0%, hsl(358 100% 35%) 100%);
+    --gradient-premium: var(--red-gradient);
+    --gradient-accent: var(--red-gradient);
     
     /* Enhanced gradients for visual appeal */
     --gradient-1: linear-gradient(145deg, hsl(222 15% 14%) 0%, hsl(222 15% 10%) 100%);
