@@ -27,14 +27,21 @@ const competitionData: Month[] = [
         organizer: "Muthoot Finance",
         tags: ["Finance", "Social Impact"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/muthoot-finclusion-challenge-2025-muthoot-finance-1285698",
       },
       {
         name: "Hero Campus Challenge",
         organizer: "Hero MotoCorp",
         tags: ["Strategy", "Ops"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/hero-campus-challenge-season-9-hero-motocorp-limited-840491?refId=Xo47NQe",
+      },
+      {
+        name: "KIRIT 4.0",
+        organizer: "Kirloskar Institute",
+        tags: ["Product", "B-Schools"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/kirit-40-kirloskar-institute-of-management-kim-852976?refId=Xo47NQe",
       }
     ]
   },
@@ -46,14 +53,28 @@ const competitionData: Month[] = [
         organizer: "L'Oréal India",
         tags: ["Innovation", "Marketing"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/o/cVR3MJA?lb=XRsQ5pg&utm_medium=Share&utm_source=shortUrl",
       },
       {
         name: "Mondelēz Maestros 2024",
         organizer: "Mondelēz International",
         tags: ["Finance"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/mondelez-maestros-2024-finance-track-mondelez-maestros-2024-mondelez-international-1210008",
+      },
+      {
+        name: "L'Oréal Sustainability Challenge 2024",
+        organizer: "L'Oréal India",
+        tags: ["Sustainability", "Strategy"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/loreal-sustainability-challenge-2024-loreal-1114541",
+      },
+      {
+        name: "NationBuilding Case Study",
+        organizer: "Nation with NaMo",
+        tags: ["Policy"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/nationbuilding-case-study-competition-nation-with-namo-882518?refId=Xo47NQe",
       }
     ]
   },
@@ -65,14 +86,7 @@ const competitionData: Month[] = [
         organizer: "Eurogrip",
         tags: ["Marketing", "Business"],
         deadline: "",
-        registerLink: "#",
-      },
-      {
-        name: "KIRIT 4.0",
-        organizer: "Kirloskar Institute",
-        tags: ["Product", "B-Schools"],
-        deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/eurogrip-torq-challenge-30-eurogrip-1391351",
       }
     ]
   },
@@ -84,33 +98,7 @@ const competitionData: Month[] = [
         organizer: "Acuvon",
         tags: ["Consulting"],
         deadline: "",
-        registerLink: "#",
-      },
-      {
-        name: "L'Oréal Sustainability Challenge 2024",
-        organizer: "L'Oréal India",
-        tags: ["Sustainability", "Strategy"],
-        deadline: "",
-        registerLink: "#",
-      }
-    ]
-  },
-  {
-    name: "May",
-    competitions: [
-      {
-        name: "JSW Challenge 2024",
-        organizer: "JSW",
-        tags: ["Ops", "Strategy"],
-        deadline: "",
-        registerLink: "#",
-      },
-      {
-        name: "HDFC Life Aspire",
-        organizer: "HDFC Life",
-        tags: ["Insurance", "Sales"],
-        deadline: "",
-        registerLink: "#",
+        registerLink: "https://www.linkedin.com/posts/acuvon_acuwar-casecompetition-consulting-activity-7238114763224858625-3sWL?utm_source=li_share&utm_content=feedcontent&utm_medium=g_dt_web&utm_campaign=copy",
       }
     ]
   },
@@ -118,18 +106,39 @@ const competitionData: Month[] = [
     name: "June",
     competitions: [
       {
-        name: "AdXiaomi 2.0",
+        name: "AdXiaomi 2.O Competition",
         organizer: "Xiaomi",
         tags: ["Marketing", "Innovation"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://careers.event.mi.com/adxiaomi",
       },
       {
         name: "Thoucentric Bottoms Up 3.0",
         organizer: "Thoucentric",
         tags: ["Strategy"],
         deadline: "",
+        registerLink: "https://bottomsup.thoucentric.com/register/",
+      },
+      {
+        name: "ITC Limited | Interrobang Season 14",
+        organizer: "ITC Limited",
+        tags: ["Strategy", "Marketing"],
+        deadline: "",
         registerLink: "#",
+      },
+      {
+        name: "Xiaomi Summit 6.0",
+        organizer: "Xiaomi",
+        tags: ["Innovation", "Strategy"],
+        deadline: "",
+        registerLink: "https://careers.event.mi.com/misummit",
+      },
+      {
+        name: "Women of Mettle_2024",
+        organizer: "Mettl",
+        tags: ["Leadership", "Women Empowerment"],
+        deadline: "",
+        registerLink: "https://xathon.mettl.com/event/women-of-mettle-2024",
       }
     ]
   },
@@ -141,14 +150,35 @@ const competitionData: Month[] = [
         organizer: "MakeMyTrip",
         tags: ["Product"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://careers.makemytrip.com/prod/campus/competitions",
       },
       {
         name: "Reckitt Career Compass 2024",
         organizer: "Reckitt",
         tags: ["Marketing", "Sales"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://insidekampus.com/competition/reckitt-career-compass-2024-iift-delhi",
+      },
+      {
+        name: "Airtel iCreate 2024",
+        organizer: "Airtel",
+        tags: ["Innovation", "Strategy"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/airtel-icreate-2024-2nd-year-b-school-track-airtel-icreate-2024-airtel-1064640?refId=Xo47NQe",
+      },
+      {
+        name: "Accenture B-School Strategy Challenge",
+        organizer: "Accenture",
+        tags: ["Strategy", "Consulting"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/accenture-b-school-strategy-challenge-season-8-accenture-1070711?refId=Xo47NQe",
+      },
+      {
+        name: "TVS Credit E.P.I.C 6.0",
+        organizer: "TVS Credit",
+        tags: ["Finance", "Strategy"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/tvs-credit-epic-60-strategy-challenge-epic-season-6-tvs-credit-1067471?refId=Xo47NQe",
       }
     ]
   },
@@ -160,27 +190,76 @@ const competitionData: Month[] = [
         organizer: "GE HealthCare",
         tags: ["Healthcare"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/ge-healthcare-thinkaloud-2024-ge-healthcare-1139308",
       },
       {
-        name: "AB InBev 100+ Challenge 2024",
+        name: "ABInBev 100+ Challenge 2024",
         organizer: "AB InBev",
         tags: ["Sustainability"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/abinbev-100-challenge-2024-ab-inbev-1125718",
       },
       {
-        name: "NationBuilding Case Study",
-        organizer: "Nation with NaMo",
-        tags: ["Policy"],
+        name: "Steel-a-thon Season 11",
+        organizer: "Mettl",
+        tags: ["Strategy", "Steel Industry"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://xathon.mettl.com/event/steelathon2024",
+      },
+      {
+        name: "Asian Paints Spectrum",
+        organizer: "Asian Paints",
+        tags: ["Design"],
+        deadline: "",
+        registerLink: "https://insidekampus.com/competition/asian-paints-spectrum-season-1",
+      },
+      {
+        name: "Rebel Foods' EatSure Cloud",
+        organizer: "Rebel Foods",
+        tags: ["Product", "Strategy"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/rebel-foods-eatsure-cloud-2024-rebel-foods-1116221?refId=Xo47NQe",
+      },
+      {
+        name: "Asian Paints CANVAS",
+        organizer: "Asian Paints",
+        tags: ["Design"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/asian-paints-canvas-2024-asian-paints-1102474?refId=Xo47NQe",
+      },
+      {
+        name: "Flipkart WiRED 8.0",
+        organizer: "Flipkart",
+        tags: ["Strategy"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/flipkart-wired-80-business-track-flipkart-wired-80-flipkart-1088343?refId=Xo47NQe",
+      },
+      {
+        name: "TAS- Tata Imagination Challenge 2024",
+        organizer: "Tata Group",
+        tags: ["Leadership"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/tata-imagination-challenge-2024-student-track-tata-imagination-challenge-2024-tata-group-1096490?refId=Xo47NQe",
+      },
+      {
+        name: "Amazon Customer Excellence (ACE)",
+        organizer: "Amazon",
+        tags: ["Ops", "Customer Experience"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/amazon-customer-excellence-ace-challenge-2024-amazon-1008875",
       }
     ]
   },
   {
     name: "September",
     competitions: [
+      {
+        name: "Kotak Life Growth Manager Hiring Challenge Case Competition",
+        organizer: "Kotak Life",
+        tags: ["Sales"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/kotak-life-growth-manager-hiring-challenge-season-2-kotak-life-insurance-kotak-742051",
+      },
       {
         name: "Bharti FinPRO 5.0",
         organizer: "Bharti Enterprises",
@@ -189,18 +268,39 @@ const competitionData: Month[] = [
         registerLink: "#",
       },
       {
-        name: "Kotak Life Growth Manager Challenge",
-        organizer: "Kotak Life",
-        tags: ["Sales"],
+        name: "Over The Wall Season 12",
+        organizer: "Marico",
+        tags: ["Strategy", "FMCG"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/over-the-wall-season-12-marico-1100615",
       },
       {
-        name: "Dexter Capital Challenge",
-        organizer: "Dexter Capital",
-        tags: ["VC"],
+        name: "Galderma Rising Achievers",
+        organizer: "Galderma",
+        tags: ["Healthcare", "Strategy"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/grad-galderma-rising-achievers-in-dermatology-galderma-1122281",
+      },
+      {
+        name: "TrenDSetter 3.0",
+        organizer: "Mettl",
+        tags: ["Data Science", "Analytics"],
+        deadline: "",
+        registerLink: "https://xathon.mettl.com/event/TrenDSetter03",
+      },
+      {
+        name: "Dabur Verve Season 3",
+        organizer: "Dabur",
+        tags: ["FMCG", "Sales"],
+        deadline: "",
+        registerLink: "https://xathon.mettl.com/event/daburVerve2024",
+      },
+      {
+        name: "Cummins Redefine 2024",
+        organizer: "Cummins India",
+        tags: ["Engineering"],
+        deadline: "",
+        registerLink: "https://insidekampus.com/competition/cummins-redefine-2024",
       }
     ]
   },
@@ -208,25 +308,25 @@ const competitionData: Month[] = [
     name: "October",
     competitions: [
       {
-        name: "PwC Campus Contender",
+        name: "PwC India Campus Contender",
         organizer: "PwC",
         tags: ["Strategy"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://apna.co/contests/pwc-campus-contender-2024",
       },
       {
-        name: "Asian Paints Spectrum",
-        organizer: "Asian Paints",
-        tags: ["Design"],
+        name: "Dexter Capital Challenge",
+        organizer: "Dexter Capital",
+        tags: ["VC"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://www.linkedin.com/posts/devendra-agrawal-85144598_next-time-i-want-to-hire-freshers-i-shall-activity-7264132627144585217-b3fh",
       },
       {
-        name: "Governance Challenge 2024",
-        organizer: "Samagra Governance",
-        tags: ["Public Policy"],
+        name: "VOIS Vantage 2023",
+        organizer: "Vodafone Idea",
+        tags: ["Strategy", "B-Schools"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/vantage-2023-1st-year-b-school-track-vantage-2023-other-organization-not-listed-here-772333?refId=Xo47NQe",
       }
     ]
   },
@@ -234,32 +334,25 @@ const competitionData: Month[] = [
     name: "November",
     competitions: [
       {
-        name: "Dabur Verve Season 3",
-        organizer: "Dabur",
-        tags: ["FMCG", "Sales"],
+        name: "The JSW Challenge 2024",
+        organizer: "JSW",
+        tags: ["Ops", "Strategy"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://insidekampus.com/competition/the-jsw-challenge-2024",
       },
       {
-        name: "Asian Paints CANVAS",
-        organizer: "Asian Paints",
-        tags: ["Design"],
+        name: "The Governance Challenge 2024",
+        organizer: "Samagra Governance",
+        tags: ["Public Policy"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/the-governance-challenge-2024-samagra-governance-1148681",
       },
       {
-        name: "Cummins Redefine 2024",
-        organizer: "Cummins India",
-        tags: ["Engineering"],
+        name: "Reliance TUP",
+        organizer: "Reliance Industries Limited",
+        tags: ["Strategy", "Leadership"],
         deadline: "",
-        registerLink: "#",
-      },
-      {
-        name: "Flipkart WiRED 8.0",
-        organizer: "Flipkart",
-        tags: ["Strategy"],
-        deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/reliance-tup-90-reliance-industries-limited-ril-814583?refId=Xo47NQe",
       }
     ]
   },
@@ -267,25 +360,11 @@ const competitionData: Month[] = [
     name: "December",
     competitions: [
       {
-        name: "Samsung E.D.G.E. 8.0",
-        organizer: "Samsung India",
-        tags: ["Innovation"],
+        name: "HDFC Life's Aspire",
+        organizer: "HDFC Life",
+        tags: ["Insurance", "Sales"],
         deadline: "",
-        registerLink: "#",
-      },
-      {
-        name: "TAS Imagination Challenge 2024",
-        organizer: "Tata Group",
-        tags: ["Leadership"],
-        deadline: "",
-        registerLink: "#",
-      },
-      {
-        name: "Amazon ACE",
-        organizer: "Amazon",
-        tags: ["Ops", "Customer Experience"],
-        deadline: "",
-        registerLink: "#",
+        registerLink: "https://unstop.com/competitions/hdfc-lifes-aspire-hdfc-life-1167692",
       }
     ]
   }
