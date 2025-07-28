@@ -19,6 +19,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         calendar: "bg-calendar-maroon text-white hover:bg-calendar-maroon/90 rounded-full font-inter font-semibold shadow-lg hover:shadow-xl transition-all duration-300",
+        premium: "bg-gradient-primary hover:shadow-glow-white text-primary-foreground font-bold shadow-card hover:shadow-glow-primary transition-all duration-500",
+        spotlight: "bg-gradient-accent hover:shadow-glow-red text-accent-foreground font-bold shadow-card hover:shadow-glow-accent transition-all duration-500",
       },
       size: {
         default: "h-10 px-4 py-2",
