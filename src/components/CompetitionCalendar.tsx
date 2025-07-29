@@ -497,7 +497,7 @@ const MonthSection: React.FC<{ month: Month; monthIndex: number; competitions: C
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: '50px' }
     );
 
     const current = sectionRef.current;
@@ -517,18 +517,16 @@ const MonthSection: React.FC<{ month: Month; monthIndex: number; competitions: C
   return (
     <section 
       ref={sectionRef}
-      className="w-full py-16 relative overflow-hidden bg-gradient-hero scroll-fade-in"
+      className="w-full py-16 relative overflow-hidden bg-gradient-hero scroll-fade-in z-10"
     >
-      {/* Premium 3D background effects with spotlight */}
+      {/* Simplified background effects */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-64 h-64 rounded-full border-2 border-accent/30 animate-pulse shadow-glow-red"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full border border-accent/20 animate-pulse delay-1000 shadow-glow-spotlight"></div>
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 rotate-45 border border-accent/15 animate-pulse delay-500"></div>
-        <div className="absolute top-1/4 right-1/3 w-40 h-40 rotate-12 border border-accent/25 animate-pulse delay-700"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 rounded-full border border-accent/20 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-24 h-24 rounded-full border border-accent/15 animate-pulse delay-500"></div>
       </div>
       
       {/* Deep gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-background/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-background/10 via-transparent to-background/10"></div>
       
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-12 scroll-slide-left">
@@ -540,7 +538,8 @@ const MonthSection: React.FC<{ month: Month; monthIndex: number; competitions: C
         
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {competitions.map((competition, index) => (
-            <div key={index} className="scroll-scale-up">
+            <div key={index} className="scroll-scale-up opacity-0 transform translate-y-4 transition-all duration-500" 
+                 style={{ transitionDelay: `${index * 100}ms` }}>
               <CompetitionCard competition={competition} />
             </div>
           ))}
@@ -563,7 +562,7 @@ const CompetitionCalendar: React.FC = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: '30px' }
     );
 
     const elements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-up');
@@ -602,24 +601,42 @@ const CompetitionCalendar: React.FC = () => {
   }, [searchTerm, selectedTag]);
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="min-h-screen bg-gradient-hero relative overflow-hidden">
+      {/* Animated Stars Background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Large stars */}
+        <div className="absolute top-[10%] left-[15%] w-2 h-2 bg-accent rounded-full animate-pulse shadow-glow-red opacity-80"></div>
+        <div className="absolute top-[25%] right-[20%] w-1.5 h-1.5 bg-primary rounded-full animate-pulse delay-500 shadow-glow-white opacity-70"></div>
+        <div className="absolute top-[45%] left-[10%] w-2.5 h-2.5 bg-accent rounded-full animate-pulse delay-1000 shadow-glow-red opacity-90"></div>
+        <div className="absolute top-[60%] right-[15%] w-1 h-1 bg-primary rounded-full animate-pulse delay-700 shadow-glow-white opacity-60"></div>
+        <div className="absolute top-[80%] left-[25%] w-2 h-2 bg-accent rounded-full animate-pulse delay-300 shadow-glow-red opacity-75"></div>
+        <div className="absolute top-[35%] right-[30%] w-1.5 h-1.5 bg-primary rounded-full animate-pulse delay-1200 shadow-glow-white opacity-80"></div>
+        
+        {/* Medium stars */}
+        <div className="absolute top-[20%] left-[40%] w-1 h-1 bg-accent rounded-full animate-pulse delay-800 shadow-glow-red opacity-60"></div>
+        <div className="absolute top-[55%] right-[40%] w-1.5 h-1.5 bg-primary rounded-full animate-pulse delay-400 shadow-glow-white opacity-70"></div>
+        <div className="absolute top-[15%] right-[50%] w-1 h-1 bg-accent rounded-full animate-pulse delay-600 shadow-glow-red opacity-50"></div>
+        <div className="absolute top-[70%] left-[50%] w-2 h-2 bg-primary rounded-full animate-pulse delay-900 shadow-glow-white opacity-85"></div>
+        <div className="absolute top-[40%] left-[60%] w-1 h-1 bg-accent rounded-full animate-pulse delay-200 shadow-glow-red opacity-65"></div>
+        
+        {/* Small scattered stars */}
+        <div className="absolute top-[12%] left-[70%] w-0.5 h-0.5 bg-primary rounded-full animate-pulse delay-1100 opacity-40"></div>
+        <div className="absolute top-[28%] right-[60%] w-0.5 h-0.5 bg-accent rounded-full animate-pulse delay-1500 opacity-50"></div>
+        <div className="absolute top-[48%] left-[80%] w-1 h-1 bg-primary rounded-full animate-pulse delay-350 opacity-45"></div>
+        <div className="absolute top-[65%] right-[70%] w-0.5 h-0.5 bg-accent rounded-full animate-pulse delay-750 opacity-35"></div>
+        <div className="absolute top-[85%] left-[75%] w-1 h-1 bg-primary rounded-full animate-pulse delay-450 opacity-55"></div>
+        <div className="absolute top-[30%] left-[85%] w-0.5 h-0.5 bg-accent rounded-full animate-pulse delay-1300 opacity-40"></div>
+        <div className="absolute top-[50%] right-[80%] w-1 h-1 bg-primary rounded-full animate-pulse delay-650 opacity-60"></div>
+        
+        {/* Corner stars */}
+        <div className="absolute top-[5%] left-[5%] w-1.5 h-1.5 bg-accent rounded-full animate-pulse delay-1000 shadow-glow-red opacity-70"></div>
+        <div className="absolute top-[8%] right-[8%] w-1 h-1 bg-primary rounded-full animate-pulse delay-500 shadow-glow-white opacity-60"></div>
+        <div className="absolute bottom-[10%] left-[8%] w-2 h-2 bg-accent rounded-full animate-pulse delay-800 shadow-glow-red opacity-75"></div>
+        <div className="absolute bottom-[12%] right-[10%] w-1.5 h-1.5 bg-primary rounded-full animate-pulse delay-300 shadow-glow-white opacity-80"></div>
+      </div>
+
       {/* Premium Hero Section */}
-      <div className="relative overflow-hidden py-24 px-4 md:px-8 bg-gradient-hero">
-        
-        {/* Premium animated background with spotlight effects */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-32 left-32 w-96 h-96 rounded-full bg-accent/10 animate-pulse blur-3xl shadow-glow-spotlight"></div>
-          <div className="absolute bottom-32 right-32 w-80 h-80 rounded-full bg-accent/15 animate-pulse delay-1000 blur-2xl shadow-glow-red"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-r from-accent/5 to-accent/8 animate-pulse delay-500 blur-3xl shadow-glow-spotlight"></div>
-        </div>
-        
-        {/* Floating elements with red accent */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-4 h-4 bg-accent rounded-full animate-pulse shadow-glow-red"></div>
-          <div className="absolute top-40 right-32 w-2 h-2 bg-primary rounded-full animate-pulse delay-300 shadow-glow-white"></div>
-          <div className="absolute bottom-40 left-1/4 w-3 h-3 bg-accent rounded-full animate-pulse delay-700 shadow-glow-red"></div>
-          <div className="absolute bottom-20 right-20 w-6 h-6 bg-primary rounded-full animate-pulse delay-1000 shadow-glow-white"></div>
-        </div>
+      <div className="relative overflow-hidden py-24 px-4 md:px-8 bg-gradient-hero z-10">
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="scroll-fade-in">
