@@ -2,7 +2,8 @@ import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { ExternalLink, Search, Filter } from 'lucide-react';
+import { ExternalLink, Search, Filter, Building2 } from 'lucide-react';
+import companyLogos from '@/assets/logos/company-logos.png';
 
 interface Competition {
   name: string;
@@ -75,6 +76,13 @@ const competitionData: Month[] = [
         tags: ["Policy"],
         deadline: "",
         registerLink: "https://unstop.com/competitions/nationbuilding-case-study-competition-nation-with-namo-882518?refId=Xo47NQe",
+      },
+      {
+        name: "Cushman & Wakefield Consulting Challenge",
+        organizer: "Ashoka Consulting",
+        tags: ["Business Plan", "Case Study", "Data Analytics", "Finance", "Strategy"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/cushman-wakefield-consulting-challenge-ashoka-consulting-club-1384158",
       }
     ]
   },
@@ -87,6 +95,13 @@ const competitionData: Month[] = [
         tags: ["Marketing", "Business"],
         deadline: "",
         registerLink: "https://unstop.com/competitions/eurogrip-torq-challenge-30-eurogrip-1391351",
+      },
+      {
+        name: "Bain Brainwars (BrAINWARS) 2025",
+        organizer: "Bain & Company's Bain Capability Network (BCN)",
+        tags: ["Consulting", "Case Study", "Mentorship", "PPI Opportunity"],
+        deadline: "",
+        registerLink: "Committees/POCs for the link",
       }
     ]
   },
@@ -99,6 +114,20 @@ const competitionData: Month[] = [
         tags: ["Consulting"],
         deadline: "",
         registerLink: "https://www.linkedin.com/posts/acuvon_acuwar-casecompetition-consulting-activity-7238114763224858625-3sWL?utm_source=li_share&utm_content=feedcontent&utm_medium=g_dt_web&utm_campaign=copy",
+      },
+      {
+        name: "EY CAFTA Case Championship 2025",
+        organizer: "EY",
+        tags: ["Financial services", "Consulting", "Risk"],
+        deadline: "",
+        registerLink: "https://www.ey.com/en_in/services/consulting/cafta-case-championship-2025",
+      },
+      {
+        name: "ZS Associates - Campus Beats 2025",
+        organizer: "ZS Associates",
+        tags: ["Coding"],
+        deadline: "",
+        registerLink: "https://www.linkedin.com/posts/zs-associates_zscampusbeats-activity-7187329184493367296-GoY9/",
       }
     ]
   },
@@ -179,6 +208,13 @@ const competitionData: Month[] = [
         tags: ["Finance", "Strategy"],
         deadline: "",
         registerLink: "https://unstop.com/competitions/tvs-credit-epic-60-strategy-challenge-epic-season-6-tvs-credit-1067471?refId=Xo47NQe",
+      },
+      {
+        name: "Ideation X 2.0",
+        organizer: "SBI Life",
+        tags: ["Finance", "Social Impact"],
+        deadline: "",
+        registerLink: "https://unstop.com/competition/ideationx-2-unstop-1142539",
       }
     ]
   },
@@ -301,6 +337,13 @@ const competitionData: Month[] = [
         tags: ["Engineering"],
         deadline: "",
         registerLink: "https://insidekampus.com/competition/cummins-redefine-2024",
+      },
+      {
+        name: "Deloitte USI - Deloitte Graduate School Maverick",
+        organizer: "Deloitte USI",
+        tags: ["Business", "Case Study"],
+        deadline: "",
+        registerLink: "https://unstop.com/competitions/graduate-school-maverick-2017-deloitte-consulting-llp-60927",
       }
     ]
   },
@@ -372,56 +415,69 @@ const competitionData: Month[] = [
 
 const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }) => {
   return (
-    <div className="group relative bg-gradient-card rounded-3xl p-8 transition-all duration-700 hover:-translate-y-3 border border-accent/20 overflow-hidden transform-gpu perspective-1000 shadow-card hover:shadow-glow-red"
+    <div className="group relative bg-gradient-card rounded-2xl p-6 transition-all duration-700 hover:-translate-y-2 border border-accent/20 overflow-hidden transform-gpu perspective-1000 shadow-card hover:shadow-glow-red"
          style={{ 
            background: 'var(--gradient-card)'
          }}>
       
       {/* 3D depth layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-2xl"></div>
       
       {/* Spotlight glow effect */}
-      <div className="absolute -inset-1 shadow-glow-spotlight rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+      <div className="absolute -inset-1 shadow-glow-spotlight rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
       
       {/* Floating decoration with red accent glow */}
-      <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-accent/30 to-accent/10 rounded-full blur-xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 shadow-glow-red"></div>
+      <div className="absolute -top-3 -right-3 w-16 h-16 bg-gradient-to-br from-accent/30 to-accent/10 rounded-full blur-xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 shadow-glow-red"></div>
       
       <div className="flex flex-col h-full relative z-10">
         <div className="flex-grow">
-          <h3 className="font-inter font-black text-2xl text-foreground mb-4 leading-tight group-hover:text-accent transition-colors duration-500 drop-shadow-sm">
-            {competition.name}
-          </h3>
+          {/* Company Logo */}
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center overflow-hidden">
+              <Building2 className="h-5 w-5 text-accent" />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-inter font-black text-lg text-foreground leading-tight group-hover:text-accent transition-colors duration-500 drop-shadow-sm line-clamp-2">
+                {competition.name}
+              </h3>
+            </div>
+          </div>
           
-          <p className="text-muted-foreground text-sm mb-6 font-inter font-semibold tracking-wide">
+          <p className="text-muted-foreground text-sm mb-4 font-inter font-semibold tracking-wide">
             {competition.organizer}
           </p>
           
-          <div className="flex flex-wrap gap-3 mb-8">
-            {competition.tags.map((tag, index) => (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {competition.tags.slice(0, 3).map((tag, index) => (
               <Badge 
                 key={index} 
-                className="bg-gradient-to-r from-accent/20 to-accent/10 text-accent border border-accent/20 font-inter text-xs px-4 py-2 rounded-full hover:bg-gradient-to-r hover:from-accent hover:to-accent/90 hover:text-background hover:border-accent transition-all duration-500 shadow-lg hover:shadow-glow-red transform hover:scale-110 hover:-translate-y-1 backdrop-blur-sm"
+                className="bg-gradient-to-r from-accent/20 to-accent/10 text-accent border border-accent/20 font-inter text-xs px-3 py-1 rounded-full hover:bg-gradient-to-r hover:from-accent hover:to-accent/90 hover:text-background hover:border-accent transition-all duration-500 shadow-sm hover:shadow-glow-red transform hover:scale-105 backdrop-blur-sm"
               >
                 {tag}
               </Badge>
             ))}
+            {competition.tags.length > 3 && (
+              <Badge className="bg-muted/50 text-muted-foreground border border-muted/20 font-inter text-xs px-3 py-1 rounded-full">
+                +{competition.tags.length - 3}
+              </Badge>
+            )}
           </div>
           
           {competition.deadline && (
-            <p className="text-muted-foreground text-xs mb-6 font-inter font-medium opacity-75">
+            <p className="text-muted-foreground text-xs mb-4 font-inter font-medium opacity-75">
               Deadline: {competition.deadline}
             </p>
           )}
         </div>
         
         <Button 
-          className="w-full bg-gradient-primary hover:shadow-glow-white text-primary-foreground font-bold py-4 px-6 rounded-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-2xl border border-primary/20 backdrop-blur-sm group-hover:shadow-primary/30"
+          className="w-full bg-gradient-primary hover:shadow-glow-white text-primary-foreground font-bold py-3 px-4 rounded-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl border border-primary/20 backdrop-blur-sm group-hover:shadow-primary/30"
           onClick={() => window.open(competition.registerLink, '_blank')}
         >
-          <span className="flex items-center justify-center gap-3">
+          <span className="flex items-center justify-center gap-2">
             Register Now
-            <ExternalLink className="h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-500" />
+            <ExternalLink className="h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-500" />
           </span>
         </Button>
       </div>
@@ -461,7 +517,7 @@ const MonthSection: React.FC<{ month: Month; monthIndex: number; competitions: C
   return (
     <section 
       ref={sectionRef}
-      className="w-full py-24 relative overflow-hidden bg-gradient-hero scroll-fade-in"
+      className="w-full py-16 relative overflow-hidden bg-gradient-hero scroll-fade-in"
     >
       {/* Premium 3D background effects with spotlight */}
       <div className="absolute inset-0 opacity-5">
@@ -475,14 +531,14 @@ const MonthSection: React.FC<{ month: Month; monthIndex: number; competitions: C
       <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-background/20"></div>
       
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-16 scroll-slide-left">
-          <h2 className="font-inter text-7xl md:text-9xl font-black text-foreground mb-6 tracking-wider transform transition-all duration-700 hover:scale-105 drop-shadow-2xl">
+        <div className="text-center mb-12 scroll-slide-left">
+          <h2 className="font-inter text-5xl md:text-7xl font-black text-foreground mb-4 tracking-wider transform transition-all duration-700 hover:scale-105 drop-shadow-2xl">
             {month.name}
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto rounded-full opacity-60 shadow-glow-red"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto rounded-full opacity-60 shadow-glow-red"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {competitions.map((competition, index) => (
             <div key={index} className="scroll-scale-up">
               <CompetitionCard competition={competition} />
@@ -548,7 +604,7 @@ const CompetitionCalendar: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-hero">
       {/* Premium Hero Section */}
-      <div className="relative overflow-hidden py-32 px-4 md:px-8 bg-gradient-hero">
+      <div className="relative overflow-hidden py-24 px-4 md:px-8 bg-gradient-hero">
         
         {/* Premium animated background with spotlight effects */}
         <div className="absolute inset-0 opacity-30">
@@ -567,7 +623,7 @@ const CompetitionCalendar: React.FC = () => {
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="scroll-fade-in">
-            <h1 className="font-inter text-7xl md:text-9xl font-black text-foreground mb-8 tracking-wider leading-tight drop-shadow-2xl">
+            <h1 className="font-inter text-5xl md:text-7xl font-black text-foreground mb-6 tracking-wider leading-tight drop-shadow-2xl">
               Competition
               <span className="block bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent drop-shadow-none">
                 Calendar
@@ -575,14 +631,14 @@ const CompetitionCalendar: React.FC = () => {
             </h1>
           </div>
           
-          <div className="w-40 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto rounded-full mb-12 opacity-80 shadow-glow-red scroll-slide-left"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto rounded-full mb-8 opacity-80 shadow-glow-red scroll-slide-left"></div>
           
-          <p className="font-inter text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-16 opacity-90 scroll-slide-right">
-            Discover and register for the most prestigious B-school competitions and challenges with our premium search experience
+          <p className="font-inter text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12 opacity-90 scroll-slide-right">
+            Discover and register for the most prestigious undergraduate and B-school competitions and challenges
           </p>
 
           {/* Premium Search Section */}
-          <div className="max-w-4xl mx-auto mb-8 scroll-scale-up">
+          <div className="max-w-3xl mx-auto mb-6 scroll-scale-up">
             <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
               {/* Search Input */}
               <div className="relative flex-1 max-w-md">
