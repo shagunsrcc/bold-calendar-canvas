@@ -8,47 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 4%;           /* #0A0A0A - very dark neutral green/black */
+    --background: 0 0% 4%;           /* #0A0A0A - solid dark background */
     --foreground: 80 100% 75%;       /* #D5FF80 - neon yellow-green */
 
-    --card: 135 8% 25%;              /* #3A463D - dark muted green/gray */
-    --card-foreground: 80 100% 75%;  /* #D5FF80 - neon yellow-green */
+    --card: 0 0% 4%;                 /* #0A0A0A - solid dark background */
+    --card-foreground: 0 0% 88%;     /* #E0E0E0 - off-white for body text */
 
-    --popover: 120 8% 24%;           /* #37433A - dark muted green/gray */
-    --popover-foreground: 80 100% 75%; /* #D5FF80 - neon yellow-green */
+    --popover: 0 0% 4%;              /* #0A0A0A - solid dark background */
+    --popover-foreground: 0 0% 88%;  /* #E0E0E0 - off-white */
 
     --primary: 80 100% 75%;          /* #D5FF80 - neon yellow-green */
-    --primary-foreground: 0 0% 4%;   /* #0A0A0A - very dark neutral green/black */
+    --primary-foreground: 0 0% 4%;   /* #0A0A0A - dark text on primary */
 
-    --secondary: 150 4% 25%;         /* #3B413E - dark muted green/gray */
-    --secondary-foreground: 79 86% 71%; /* #C8F575 - softer yellow-green */
+    --secondary: 15 49% 32%;         /* #7B3B2A - warm brownish-red */
+    --secondary-foreground: 79 86% 71%; /* #C8F575 - soft yellow-green */
 
-    --muted: 135 8% 25%;             /* #3A463D - dark muted green/gray */
-    --muted-foreground: 79 86% 71%;  /* #C8F575 - softer yellow-green */
+    --muted: 0 0% 10%;               /* #1A1A1A - very subtle dark */
+    --muted-foreground: 79 86% 71%;  /* #C8F575 - soft yellow-green */
 
     --accent: 2 100% 20%;            /* #660300 - deep red */
     --accent-foreground: 80 100% 75%; /* #D5FF80 - neon yellow-green */
 
-    /* Dark Gradient Theme System */
-    --hero-dark: 0 0% 4%;            /* #0A0A0A - very dark neutral green/black */
-    --hero-darker: 0 0% 2%;          /* Even darker */
-    --card-dark: 135 8% 25%;         /* #3A463D - dark muted green/gray */
-    --card-darker: 120 8% 24%;       /* #37433A - dark muted green/gray */
+    /* Solid dark backgrounds - no gradients */
+    --hero-dark: 0 0% 4%;            /* #0A0A0A - solid dark */
+    --hero-darker: 0 0% 4%;          /* #0A0A0A - solid dark */
+    --card-dark: 0 0% 4%;            /* #0A0A0A - solid dark */
+    --card-darker: 0 0% 4%;          /* #0A0A0A - solid dark */
     --spotlight-red: 2 100% 20%;     /* #660300 - deep red */
     --deep-black: 0 0% 0%;           /* Deep black for shadows */
     
-    /* Premium gradients based on new specifications */
-    --gradient-hero: linear-gradient(135deg, hsl(80 100% 75%) 0%, hsl(15 49% 32%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(135 8% 25%) 0%, hsl(120 8% 24%) 100%);
+    /* Text gradients only - using neon green to warm brown-red */
+    --gradient-hero: hsl(0 0% 4%);   /* Solid dark background */
+    --gradient-card: hsl(0 0% 4%);   /* Solid dark background */
     --gradient-primary: linear-gradient(135deg, hsl(80 100% 75%) 0%, hsl(15 49% 32%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(2 100% 20%) 0%, hsl(15 49% 32%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(2 100% 20%) 0%, hsl(2 100% 25%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(80 100% 75%) 0%, hsl(15 49% 32%) 100%);
     
     /* Premium 3D shadows - Deep black with 25% opacity */
     --shadow-deep: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
     --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.25);
     --shadow-hover: 0 35px 60px -12px hsl(0 0% 0% / 0.3);
     
-    /* Spotlight glow effects - Deep red with 30% opacity */
+    /* Glow effects - Deep red and neon green */
     --glow-spotlight: 0 0 60px hsl(2 100% 20% / 0.3);
     --glow-red: 0 0 40px hsl(2 100% 20% / 0.3);
     --glow-white: 0 0 40px hsl(80 100% 75% / 0.4);
