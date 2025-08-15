@@ -8,54 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 222 15% 7%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 4%;           /* #0A0A0A - very dark neutral green/black */
+    --foreground: 80 100% 75%;       /* #D5FF80 - neon yellow-green */
 
-    --card: 222 15% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 135 8% 25%;              /* #3A463D - dark muted green/gray */
+    --card-foreground: 80 100% 75%;  /* #D5FF80 - neon yellow-green */
 
-    --popover: 222 15% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 120 8% 24%;           /* #37433A - dark muted green/gray */
+    --popover-foreground: 80 100% 75%; /* #D5FF80 - neon yellow-green */
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 222 15% 7%;
+    --primary: 80 100% 75%;          /* #D5FF80 - neon yellow-green */
+    --primary-foreground: 0 0% 4%;   /* #0A0A0A - very dark neutral green/black */
 
-    --secondary: 222 15% 12%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 150 4% 25%;         /* #3B413E - dark muted green/gray */
+    --secondary-foreground: 79 86% 71%; /* #C8F575 - softer yellow-green */
 
-    --muted: 222 15% 15%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 135 8% 25%;             /* #3A463D - dark muted green/gray */
+    --muted-foreground: 79 86% 71%;  /* #C8F575 - softer yellow-green */
 
-    --accent: 358 100% 30%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 2 100% 20%;            /* #660300 - deep red */
+    --accent-foreground: 80 100% 75%; /* #D5FF80 - neon yellow-green */
 
     /* Dark Gradient Theme System */
-    --hero-dark: 222 15% 7%;        /* Dark charcoal */
-    --hero-darker: 222 15% 5%;      /* Deeper black */
-    --card-dark: 222 15% 10%;       /* Dark grey blend start */
-    --card-darker: 222 15% 8%;      /* Dark grey blend end */
-    --spotlight-red: 358 100% 30%;  /* Red accent */
-    --deep-black: 0 0% 0%;          /* Deep black for shadows */
+    --hero-dark: 0 0% 4%;            /* #0A0A0A - very dark neutral green/black */
+    --hero-darker: 0 0% 2%;          /* Even darker */
+    --card-dark: 135 8% 25%;         /* #3A463D - dark muted green/gray */
+    --card-darker: 120 8% 24%;       /* #37433A - dark muted green/gray */
+    --spotlight-red: 2 100% 20%;     /* #660300 - deep red */
+    --deep-black: 0 0% 0%;           /* Deep black for shadows */
     
-    /* Premium gradients based on specifications */
-    --gradient-hero: linear-gradient(135deg, hsl(222 15% 7%) 0%, hsl(222 15% 5%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(222 15% 10%) 0%, hsl(222 15% 8%) 100%);
-    --gradient-primary: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(0 0% 85%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(358 100% 30%) 0%, hsl(358 100% 25%) 100%);
+    /* Premium gradients based on new specifications */
+    --gradient-hero: linear-gradient(135deg, hsl(80 100% 75%) 0%, hsl(15 49% 32%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(135 8% 25%) 0%, hsl(120 8% 24%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(80 100% 75%) 0%, hsl(15 49% 32%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(2 100% 20%) 0%, hsl(15 49% 32%) 100%);
     
     /* Premium 3D shadows - Deep black with 25% opacity */
     --shadow-deep: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
     --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.25);
     --shadow-hover: 0 35px 60px -12px hsl(0 0% 0% / 0.3);
     
-    /* Spotlight glow effects - Red accent with 30% opacity */
-    --glow-spotlight: 0 0 60px hsl(358 100% 30% / 0.3);
-    --glow-red: 0 0 40px hsl(358 100% 30% / 0.3);
-    --glow-white: 0 0 40px hsl(0 0% 98% / 0.4);
+    /* Spotlight glow effects - Deep red with 30% opacity */
+    --glow-spotlight: 0 0 60px hsl(2 100% 20% / 0.3);
+    --glow-red: 0 0 40px hsl(2 100% 20% / 0.3);
+    --glow-white: 0 0 40px hsl(80 100% 75% / 0.4);
     
     /* Button glow effects */
-    --glow-primary: 0 0 40px hsl(0 0% 98% / 0.4);
-    --glow-accent: 0 0 40px hsl(358 100% 30% / 0.4);
+    --glow-primary: 0 0 40px hsl(80 100% 75% / 0.4);
+    --glow-accent: 0 0 40px hsl(2 100% 20% / 0.4);
 
     /* Animation variables */
     --scroll-fade: 0;

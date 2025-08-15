@@ -642,7 +642,7 @@ const CompetitionCalendar: React.FC = () => {
           <div className="scroll-fade-in">
             <h1 className="font-inter text-5xl md:text-7xl font-black text-foreground mb-6 tracking-wider leading-tight drop-shadow-2xl">
               Competition
-              <span className="block bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent drop-shadow-none">
+              <span className="block bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent drop-shadow-none">
                 Calendar
               </span>
             </h1>
@@ -650,7 +650,7 @@ const CompetitionCalendar: React.FC = () => {
           
           <div className="w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto rounded-full mb-8 opacity-80 shadow-glow-red scroll-slide-left"></div>
           
-          <p className="font-inter text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12 opacity-90 scroll-slide-right">
+          <p className="font-inter text-lg md:text-xl text-secondary-foreground max-w-3xl mx-auto leading-relaxed mb-12 opacity-90 scroll-slide-right">
             Discover and register for the most prestigious undergraduate and B-school competitions and challenges
           </p>
 
@@ -659,7 +659,7 @@ const CompetitionCalendar: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
               {/* Search Input */}
               <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-accent h-5 w-5" />
                 <Input
                   type="text"
                   placeholder="Search competitions, organizers, or tags..."
@@ -671,7 +671,7 @@ const CompetitionCalendar: React.FC = () => {
 
               {/* Tag Filter */}
               <div className="relative">
-                <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+                <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-accent h-5 w-5" />
                 <select
                   value={selectedTag}
                   onChange={(e) => setSelectedTag(e.target.value)}
