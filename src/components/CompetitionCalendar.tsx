@@ -415,20 +415,14 @@ const competitionData: Month[] = [
 
 const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }) => {
   return (
-    <div className="group relative bg-card rounded-2xl p-6 transition-all duration-700 hover:-translate-y-2 border border-accent/20 overflow-hidden transform-gpu perspective-1000 shadow-card hover:shadow-glow-red"
+    <div className="group relative bg-card rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 border border-accent/20 overflow-hidden shadow-card"
          style={{ 
            backgroundColor: 'hsl(var(--card))'
          }}>
       
       {/* 3D depth layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-2xl"></div>
-      
-      {/* Spotlight glow effect */}
-      <div className="absolute -inset-1 shadow-glow-spotlight rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-      
-      {/* Floating decoration with red accent glow */}
-      <div className="absolute -top-3 -right-3 w-16 h-16 bg-gradient-to-br from-accent/30 to-accent/10 rounded-full blur-xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 shadow-glow-red"></div>
       
       <div className="flex flex-col h-full relative z-10">
         <div className="flex-grow">
@@ -438,7 +432,7 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
               <Building2 className="h-5 w-5 text-accent" />
             </div>
             <div className="flex-1">
-              <h3 className="font-inter font-black text-lg text-primary leading-tight group-hover:text-accent transition-colors duration-500 drop-shadow-sm line-clamp-2">
+              <h3 className="font-inter font-black text-lg text-primary leading-tight group-hover:text-accent transition-colors duration-300 drop-shadow-sm line-clamp-2">
                 {competition.name}
               </h3>
             </div>
@@ -452,7 +446,7 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
             {competition.tags.slice(0, 3).map((tag, index) => (
                <Badge 
                 key={index} 
-                className="bg-secondary/30 text-secondary-foreground border border-secondary/40 font-inter text-xs px-3 py-1 rounded-full hover:bg-secondary hover:text-primary transition-all duration-500 shadow-sm transform hover:scale-105 backdrop-blur-sm"
+                className="bg-secondary/30 text-secondary-foreground border border-secondary/40 font-inter text-xs px-3 py-1 rounded-full hover:bg-secondary hover:text-primary transition-all duration-300 shadow-sm transform hover:scale-105"
               >
                 {tag}
               </Badge>
@@ -472,12 +466,12 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
         </div>
         
         <Button 
-          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-3 px-4 rounded-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl border border-accent/20 backdrop-blur-sm group-hover:shadow-accent/30"
+          className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg border border-accent/20"
           onClick={() => window.open(competition.registerLink, '_blank')}
         >
           <span className="flex items-center justify-center gap-2">
             Register Now
-            <ExternalLink className="h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-500" />
+            <ExternalLink className="h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
           </span>
         </Button>
       </div>
@@ -486,38 +480,11 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
 };
 
 const MonthSection: React.FC<{ month: Month; monthIndex: number; competitions: Competition[] }> = ({ month, monthIndex, competitions }) => {
-  const sectionRef = useRef<HTMLElement>(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.05, rootMargin: '50px' }
-    );
-
-    const current = sectionRef.current;
-    if (current) {
-      observer.observe(current);
-    }
-
-    return () => {
-      if (current) {
-        observer.unobserve(current);
-      }
-    };
-  }, []);
-
   if (competitions.length === 0) return null;
 
   return (
     <section 
-      ref={sectionRef}
-      className="w-full py-16 relative overflow-hidden bg-background scroll-fade-in z-10"
+      className="w-full py-16 relative overflow-hidden bg-background z-10"
     >
       {/* Simplified background effects */}
       <div className="absolute inset-0 opacity-5">
@@ -529,17 +496,16 @@ const MonthSection: React.FC<{ month: Month; monthIndex: number; competitions: C
       <div className="absolute inset-0 bg-gradient-to-t from-background/10 via-transparent to-background/10"></div>
       
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-12 scroll-slide-left">
-          <h2 className="font-inter text-5xl md:text-7xl font-black text-primary mb-4 tracking-wider transform transition-all duration-700 hover:scale-105 drop-shadow-2xl">
+        <div className="text-center mb-12">
+          <h2 className="font-inter text-5xl md:text-7xl font-black text-primary mb-4 tracking-wider transform transition-all duration-300 hover:scale-105 drop-shadow-2xl">
             {month.name}
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto rounded-full opacity-60 shadow-glow-red"></div>
+          <div className="w-24 h-1 bg-accent mx-auto rounded-full opacity-60"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {competitions.map((competition, index) => (
-            <div key={index} className="scroll-scale-up opacity-0 transform translate-y-4 transition-all duration-500" 
-                 style={{ transitionDelay: `${index * 100}ms` }}>
+            <div key={index}>
               <CompetitionCard competition={competition} />
             </div>
           ))}
@@ -552,26 +518,6 @@ const MonthSection: React.FC<{ month: Month; monthIndex: number; competitions: C
 const CompetitionCalendar: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState('');
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.05, rootMargin: '30px' }
-    );
-
-    const elements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-up');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
 
   // Get all unique tags for filtering
   const allTags = useMemo(() => {
@@ -639,7 +585,7 @@ const CompetitionCalendar: React.FC = () => {
       <div className="relative overflow-hidden py-24 px-4 md:px-8 bg-background z-10">
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className="scroll-fade-in">
+          <div>
             <h1 className="font-inter text-5xl md:text-7xl font-black text-primary mb-6 tracking-wider leading-tight drop-shadow-2xl">
               Competition
               <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent drop-shadow-none">
@@ -648,14 +594,14 @@ const CompetitionCalendar: React.FC = () => {
             </h1>
           </div>
           
-          <div className="w-32 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto rounded-full mb-8 opacity-80 shadow-glow-red scroll-slide-left"></div>
+          <div className="w-32 h-1 bg-accent mx-auto rounded-full mb-8 opacity-80"></div>
           
-          <p className="font-inter text-lg md:text-xl text-card-foreground max-w-3xl mx-auto leading-relaxed mb-12 opacity-90 scroll-slide-right">
+          <p className="font-inter text-lg md:text-xl text-card-foreground max-w-3xl mx-auto leading-relaxed mb-12 opacity-90">
             Discover and register for the most prestigious undergraduate and B-school competitions and challenges
           </p>
 
           {/* Premium Search Section */}
-          <div className="max-w-3xl mx-auto mb-6 scroll-scale-up">
+          <div className="max-w-3xl mx-auto mb-6">
             <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
               {/* Search Input */}
               <div className="relative flex-1 max-w-md">
@@ -665,7 +611,7 @@ const CompetitionCalendar: React.FC = () => {
                   placeholder="Search competitions, organizers, or tags..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-12 pr-6 py-4 bg-card border border-accent/20 rounded-2xl text-card-foreground placeholder-muted-foreground/60 focus:border-accent focus:ring-2 focus:ring-accent/20 backdrop-blur-sm shadow-card transition-all duration-300 hover:shadow-glow-red"
+                  className="pl-12 pr-6 py-4 bg-card border border-accent/20 rounded-2xl text-card-foreground placeholder-muted-foreground/60 focus:border-accent focus:ring-2 focus:ring-accent/20 shadow-card transition-all duration-300"
                 />
               </div>
 
@@ -675,7 +621,7 @@ const CompetitionCalendar: React.FC = () => {
                 <select
                   value={selectedTag}
                   onChange={(e) => setSelectedTag(e.target.value)}
-                  className="pl-12 pr-8 py-4 bg-card border border-accent/20 rounded-2xl text-card-foreground focus:border-accent focus:ring-2 focus:ring-accent/20 backdrop-blur-sm shadow-card transition-all duration-300 appearance-none cursor-pointer hover:shadow-glow-red"
+                  className="pl-12 pr-8 py-4 bg-card border border-accent/20 rounded-2xl text-card-foreground focus:border-accent focus:ring-2 focus:ring-accent/20 shadow-card transition-all duration-300 appearance-none cursor-pointer"
                 >
                   <option value="">All Categories</option>
                   {allTags.map(tag => (
@@ -717,7 +663,7 @@ const CompetitionCalendar: React.FC = () => {
               setSearchTerm('');
               setSelectedTag('');
             }}
-            className="mt-6 bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-300 shadow-glow-red"
+            className="mt-6 bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-300"
           >
             Clear Filters
           </Button>
