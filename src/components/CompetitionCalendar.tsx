@@ -446,7 +446,7 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
              {competition.tags.slice(0, 3).map((tag, index) => (
                 <Badge 
                  key={index} 
-                 className="bg-accent/20 text-primary border border-accent/30 font-inter text-xs px-3 py-1 rounded-full hover:bg-accent hover:text-accent-foreground transition-all duration-300 shadow-sm transform hover:scale-105"
+                 className="bg-accent/20 text-white border border-accent/30 font-inter text-xs px-3 py-1 rounded-full hover:bg-accent hover:text-accent-foreground transition-all duration-300 shadow-sm transform hover:scale-105"
                >
                  {tag}
                </Badge>
