@@ -442,14 +442,14 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
             {competition.organizer}
           </p>
           
-          <div className="flex flex-wrap gap-2 mb-4">
-            {competition.tags.slice(0, 3).map((tag, index) => (
-               <Badge 
-                key={index} 
-                className="bg-secondary/30 text-secondary-foreground border border-secondary/40 font-inter text-xs px-3 py-1 rounded-full hover:bg-secondary hover:text-primary transition-all duration-300 shadow-sm transform hover:scale-105"
-              >
-                {tag}
-              </Badge>
+           <div className="flex flex-wrap gap-2 mb-4">
+             {competition.tags.slice(0, 3).map((tag, index) => (
+                <Badge 
+                 key={index} 
+                 className="bg-accent/20 text-accent border border-accent/30 font-inter text-xs px-3 py-1 rounded-full hover:bg-accent hover:text-accent-foreground transition-all duration-300 shadow-sm transform hover:scale-105"
+               >
+                 {tag}
+               </Badge>
             ))}
             {competition.tags.length > 3 && (
               <Badge className="bg-muted/50 text-muted-foreground border border-muted/20 font-inter text-xs px-3 py-1 rounded-full">
