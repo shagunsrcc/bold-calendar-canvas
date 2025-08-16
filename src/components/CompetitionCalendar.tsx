@@ -432,7 +432,7 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
               <Building2 className="h-5 w-5 text-accent" />
             </div>
             <div className="flex-1">
-              <h3 className="font-inter font-black text-lg text-primary leading-tight group-hover:text-accent transition-colors duration-300 drop-shadow-sm line-clamp-2">
+              <h3 className="font-inter font-black text-lg text-white leading-tight group-hover:text-accent transition-colors duration-300 drop-shadow-sm line-clamp-2">
                 {competition.name}
               </h3>
             </div>
@@ -497,7 +497,7 @@ const MonthSection: React.FC<{ month: Month; monthIndex: number; competitions: C
       
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="font-inter text-5xl md:text-7xl font-black text-primary mb-4 tracking-wider transform transition-all duration-300 hover:scale-105 drop-shadow-2xl">
+          <h2 className="font-inter text-5xl md:text-7xl font-black text-white mb-4 tracking-wider transform transition-all duration-300 hover:scale-105 drop-shadow-2xl">
             {month.name}
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto rounded-full opacity-60"></div>
@@ -586,7 +586,7 @@ const CompetitionCalendar: React.FC = () => {
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div>
-            <h1 className="font-inter text-5xl md:text-7xl font-black text-primary mb-6 tracking-wider leading-tight drop-shadow-2xl">
+            <h1 className="font-inter text-5xl md:text-7xl font-black text-white mb-6 tracking-wider leading-tight drop-shadow-2xl">
               Competition
               <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent drop-shadow-none">
                 Calendar
