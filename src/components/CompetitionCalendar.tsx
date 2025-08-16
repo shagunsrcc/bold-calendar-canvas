@@ -452,7 +452,7 @@ const CompetitionCard: React.FC<{ competition: Competition }> = ({ competition }
                </Badge>
             ))}
             {competition.tags.length > 3 && (
-              <Badge className="bg-muted/50 text-muted-foreground border border-muted/20 font-inter text-xs px-3 py-1 rounded-full">
+              <Badge className="bg-muted/50 text-white border border-muted/20 font-inter text-xs px-3 py-1 rounded-full">
                 +{competition.tags.length - 3}
               </Badge>
             )}
