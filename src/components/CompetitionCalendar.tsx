@@ -35,14 +35,14 @@ const competitionData: Month[] = [
         organizer: "Hero MotoCorp",
         tags: ["Strategy", "Ops"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/hero-campus-challenge-2025-hero-motocorp-1278006",
+        registerLink: "https://unstop.com/competitions/hero-campus-challenge-season-9-hero-motocorp-limited-840491",
       },
       {
-        name: "KIRIT 4.0",
+        name: "KIRIT 5.0",
         organizer: "Kirloskar Institute",
         tags: ["Product", "B-Schools"],
         deadline: "",
-        registerLink: "https://www.linkedin.com/posts/kirloskar-institute-of-management-_kirit-kirit4-challenge-activity-7151792492101672960-mL9B",
+        registerLink: "https://unstop.com/all-opportunities?oppstatus=recent&searchTerm=hero%20campus%20challenge",
       }
     ]
   },
@@ -61,7 +61,7 @@ const competitionData: Month[] = [
         organizer: "Mondelēz International",
         tags: ["Finance"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/mondelez-maestros-2024-mondelez-international-1123265",
+        registerLink: "https://unstop.com/competitions/mondelez-maestros-supply-chain-track-20-1st-year-mondelez-maestros-supply-chain-track-20-mondelez-internati-1533731",
       },
       {
         name: "L'Oréal Sustainability Challenge 2024",
@@ -146,14 +146,14 @@ const competitionData: Month[] = [
         organizer: "Thoucentric",
         tags: ["Strategy"],
         deadline: "",
-        registerLink: "https://bottomsup.thoucentric.com/register/",
+        registerLink: "https://bottomsup.thoucentric.com/how-to-participate-2/",
       },
       {
         name: "ITC Limited | Interrobang Season 14",
         organizer: "ITC Limited",
         tags: ["Strategy", "Marketing"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://www.itcportal.com/",
       },
       {
         name: "Xiaomi Summit 6.0",
@@ -189,11 +189,11 @@ const competitionData: Month[] = [
         registerLink: "https://insidekampus.com/competition/reckitt-career-compass-2024-iift-delhi",
       },
       {
-        name: "Airtel iCreate 2024",
+        name: "Airtel iCreate 2025",
         organizer: "Airtel",
         tags: ["Innovation", "Strategy"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/airtel-icreate-2024-2nd-year-b-school-track-airtel-icreate-2024-airtel-1064640?refId=Xo47NQe",
+        registerLink: "https://unstop.com/all-opportunities?oppstatus=recent&searchTerm=Airtel%20iCreate%202025",
       },
       {
         name: "Accenture B-School Strategy Challenge",
@@ -257,11 +257,11 @@ const competitionData: Month[] = [
         registerLink: "https://unstop.com/competitions/rebel-foods-eatsure-cloud-2024-rebel-foods-1116221?refId=Xo47NQe",
       },
       {
-        name: "Asian Paints CANVAS",
+        name: "Asian Paints CANVAS 2025",
         organizer: "Asian Paints",
         tags: ["Design"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/asian-paints-canvas-2024-asian-paints-1102474?refId=Xo47NQe",
+        registerLink: "https://unstop.com/all-opportunities?oppstatus=recent&searchTerm=Asian%20Paints%20CANVAS%202025",
       },
       {
         name: "Flipkart WiRED 8.0",
@@ -271,18 +271,18 @@ const competitionData: Month[] = [
         registerLink: "https://unstop.com/competitions/flipkart-wired-80-business-track-flipkart-wired-80-flipkart-1088343?refId=Xo47NQe",
       },
       {
-        name: "TAS- Tata Imagination Challenge 2024",
+        name: "Tata Imagination Challenge 2025",
         organizer: "Tata Group",
         tags: ["Leadership"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/tata-imagination-challenge-2024-student-track-tata-imagination-challenge-2024-tata-group-1096490?refId=Xo47NQe",
+        registerLink: "https://unstop.com/competitions/tata-imagination-challenge-2025-tata-group-1543000",
       },
       {
-        name: "Amazon Customer Excellence (ACE)",
+        name: "Amazon Customer Excellence (ACE) 2025",
         organizer: "Amazon",
         tags: ["Ops", "Customer Experience"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/amazon-customer-excellence-ace-challenge-2024-amazon-1008875",
+        registerLink: "https://unstop.com/competitions/amazon-customer-excellence-ace-challenge-2025-amazon-1505288",
       }
     ]
   },
@@ -301,7 +301,7 @@ const competitionData: Month[] = [
         organizer: "Bharti Enterprises",
         tags: ["Finance"],
         deadline: "",
-        registerLink: "#",
+        registerLink: "https://www.linkedin.com/posts/bharti-enterprise_bharti-group-is-pleased-to-announce-the-launch-activity-7244322458160259072-mrvj/",
       },
       {
         name: "Over The Wall Season 12",
@@ -365,11 +365,11 @@ const competitionData: Month[] = [
         registerLink: "https://www.linkedin.com/posts/devendra-agrawal-85144598_next-time-i-want-to-hire-freshers-i-shall-activity-7264132627144585217-b3fh",
       },
       {
-        name: "VOIS Vantage 2023",
+        name: "VOIS Vantage 2025",
         organizer: "Vodafone Idea",
         tags: ["Strategy", "B-Schools"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/vantage-2023-1st-year-b-school-track-vantage-2023-other-organization-not-listed-here-772333?refId=Xo47NQe",
+        registerLink: "https://voisfortech.com/innovation-challenge",
       }
     ]
   },
@@ -395,7 +395,7 @@ const competitionData: Month[] = [
         organizer: "Reliance Industries Limited",
         tags: ["Strategy", "Leadership"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/reliance-tup-90-reliance-industries-limited-ril-814583?refId=Xo47NQe",
+        registerLink: "http://reliancetup.in/competitions/juspay-hiring-challenge-2025-juspay-1466934",
       }
     ]
   },
