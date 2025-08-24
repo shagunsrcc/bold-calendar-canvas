@@ -35,14 +35,14 @@ const competitionData: Month[] = [
         organizer: "Hero MotoCorp",
         tags: ["Strategy", "Ops"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/hero-campus-challenge-season-9-hero-motocorp-limited-840491?refId=Xo47NQe",
+        registerLink: "https://unstop.com/competitions/hero-campus-challenge-2025-hero-motocorp-1278006",
       },
       {
         name: "KIRIT 4.0",
         organizer: "Kirloskar Institute",
         tags: ["Product", "B-Schools"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/kirit-40-kirloskar-institute-of-management-kim-852976?refId=Xo47NQe",
+        registerLink: "https://www.linkedin.com/posts/kirloskar-institute-of-management-_kirit-kirit4-challenge-activity-7151792492101672960-mL9B",
       }
     ]
   },
@@ -54,14 +54,14 @@ const competitionData: Month[] = [
         organizer: "L'Oréal India",
         tags: ["Innovation", "Marketing"],
         deadline: "",
-        registerLink: "https://unstop.com/o/cVR3MJA?lb=XRsQ5pg&utm_medium=Share&utm_source=shortUrl",
+        registerLink: "https://unstop.com/competitions/loreal-brandstorm-2024-loreal-841424",
       },
       {
         name: "Mondelēz Maestros 2024",
         organizer: "Mondelēz International",
         tags: ["Finance"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/mondelez-maestros-2024-finance-track-mondelez-maestros-2024-mondelez-international-1210008",
+        registerLink: "https://unstop.com/competitions/mondelez-maestros-2024-mondelez-international-1123265",
       },
       {
         name: "L'Oréal Sustainability Challenge 2024",
@@ -75,7 +75,7 @@ const competitionData: Month[] = [
         organizer: "Nation with NaMo",
         tags: ["Policy"],
         deadline: "",
-        registerLink: "https://unstop.com/competitions/nationbuilding-case-study-competition-nation-with-namo-882518?refId=Xo47NQe",
+        registerLink: "https://unstop.com/competitions/nationbuilding-case-study-competition-2025-nation-with-namo-1268526",
       },
       {
         name: "Cushman & Wakefield Consulting Challenge",
@@ -101,7 +101,7 @@ const competitionData: Month[] = [
         organizer: "Bain & Company's Bain Capability Network (BCN)",
         tags: ["Consulting", "Case Study", "Mentorship", "PPI Opportunity"],
         deadline: "",
-        registerLink: "Committees/POCs for the link",
+        registerLink: "https://www.bain.com/careers/work-with-us/internships-programs/bainw",
       }
     ]
   },
